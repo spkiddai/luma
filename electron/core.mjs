@@ -78,11 +78,12 @@ export class Core {
     this.runtime = path.join(this.directory, 'runtime.yaml');
     await atomicWrite(this.runtime, content);
     // The controller starts before forwarding is ready. The core's post-up hook
-    // runs after its tunnel enters Running. Keep the command constant and pass
-    // the private marker path through an environment variable, never shell text.
-    const markerFile = path.join(this.directory, `.startup-ready-${randomBytes(16).toString('hex')}`);
-    const readyCommand = process.platform === 'win32' ? 'echo ready>"%LUMA_READY_FILE%"' : 'printf ready > "$LUMA_READY_FILE"';
-    const child = spawn(this.binary, ['-d', this.directory, '-f', this.runtime, '-post-up', readyCommand], { stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true, env: { ...process.env, LUMA_READY_FILE: markerFile } });
+    // runs after its tunnel enters Running. The hook only contains an ASCII
+    // random basename; the private directory is passed as cwd, never shell text.
+    const markerName = `.startup-ready-${randomBytes(16).toString('hex')}`;
+    const markerFile = path.join(this.directory, markerName);
+    const readyCommand = process.platform === 'win32' ? `echo ready>${markerName}` : `printf ready > ${markerName}`;
+    const child = spawn(this.binary, ['-d', this.directory, '-f', this.runtime, '-post-up', readyCommand], { stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true, cwd: this.directory });
     this.child = child;
     this.lastSample = null;
     let exitError;

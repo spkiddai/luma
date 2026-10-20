@@ -9,7 +9,7 @@ import { Core, availablePort } from '../electron/core.mjs';
 import { DEFAULT_PROFILE } from '../electron/config.mjs';
 
 test('real mihomo: HTTP proxy routing, authenticated API, mode changes, config reload and lifecycle', { timeout: 90000 }, async t => {
-  const directory = await mkdtemp(path.join(os.tmpdir(), 'desk-core-'));
+  const directory = await mkdtemp(path.join(os.tmpdir(), 'luma core % & '));
   const store = await new Store(directory).init(); store.state.port = await availablePort();
   const platform = { darwin: 'mac', win32: 'win', linux: 'linux' }[process.platform];
   let unexpectedExit = 0;
