@@ -1,0 +1,19 @@
+node_modules/
+dist/
+release/
+resources/core/*
+resources/geodata/*
+!resources/geodata/manifest.json
+!resources/core/.gitkeep
+vendor/
+playwright-report/
+test-results/
+.DS_Store
+*.log
+
+# Local diagnostics and unrelated private work
+ops/
+artifacts/
+.env
+.env.*
+*.local

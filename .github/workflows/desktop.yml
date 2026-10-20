@@ -1,0 +1,64 @@
+name: Build Luma desktop
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: desktop-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  desktop:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: macos-15
+            platform: mac
+            arch: arm64
+          - runner: macos-15-intel
+            platform: mac
+            arch: x64
+          - runner: windows-latest
+            platform: win
+            arch: x64
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run core:download
+      - run: npm run geodata:download
+      - run: npm run build
+      - run: npm test
+      - name: Package macOS
+        if: matrix.platform == 'mac'
+        run: |
+          npx electron-builder --mac zip --${{ matrix.arch }} --publish never
+          node scripts/build-mac-installer.mjs "release/mac-${{ matrix.arch }}/Luma.app"
+      - name: Package Windows
+        if: matrix.platform == 'win'
+        run: npm run dist:win -- --publish never
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Luma-${{ matrix.platform }}-${{ matrix.arch }}
+          path: |
+            release/*.zip
+            release/*.exe
+            release/*/*.pkg
+            release/*/*.sha256
+          if-no-files-found: error
+          retention-days: 14
+  container-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -f build/docker/Dockerfile -t luma-check .

@@ -1,0 +1,27 @@
+# Only application source and public resources enter a build context.
+**
+!package.json
+!package-lock.json
+!index.html
+!tsconfig.json
+!vite.config.ts
+!LICENSE
+!THIRD_PARTY_NOTICES.md
+!electron/
+!electron/**
+!src/
+!src/**
+!scripts/
+!scripts/**
+!tests/
+!tests/**
+!resources/
+!resources/icon.*
+!resources/tray*.png
+!resources/licenses/
+!resources/licenses/**
+!resources/geodata/
+!resources/geodata/manifest.json
+!build/
+!build/docker/
+!build/docker/Dockerfile
