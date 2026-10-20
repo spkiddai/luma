@@ -10,7 +10,7 @@ if (process.platform !== 'darwin') throw new Error('macOS 安装包需要在 Mac
 const execute = promisify(execFile);
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const pkg = JSON.parse(await readFile(path.join(root, 'package.json'), 'utf8'));
-const app = path.resolve(process.argv[2] || path.join(root, 'release/mac-arm64/Luma.app'));
+const app = path.resolve(process.argv[2] || path.join(root, process.arch === 'arm64' ? 'release/mac-arm64/Luma.app' : 'release/mac/Luma.app'));
 const { stdout } = await execute('/usr/bin/plutil', ['-convert', 'json', '-o', '-', path.join(app, 'Contents/Info.plist')]);
 const info = JSON.parse(stdout);
 if (info.CFBundleIdentifier !== pkg.build.appId || info.CFBundleShortVersionString !== pkg.version) throw new Error('应用标识或版本不匹配，请先构建当前版本的 Mac 应用');

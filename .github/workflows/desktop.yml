@@ -19,9 +19,11 @@ jobs:
           - runner: macos-15
             platform: mac
             arch: arm64
+            appdir: mac-arm64
           - runner: macos-15-intel
             platform: mac
             arch: x64
+            appdir: mac
           - runner: windows-latest
             platform: win
             arch: x64
@@ -44,7 +46,7 @@ jobs:
         if: matrix.platform == 'mac'
         run: |
           npx electron-builder --mac zip --${{ matrix.arch }} --publish never
-          node scripts/build-mac-installer.mjs "release/mac-${{ matrix.arch }}/Luma.app"
+          node scripts/build-mac-installer.mjs "release/${{ matrix.appdir }}/Luma.app"
       - name: Package Windows
         if: matrix.platform == 'win'
         run: npm run dist:win -- --publish never
