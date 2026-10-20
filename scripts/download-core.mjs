@@ -1,9 +1,9 @@
 import { mkdir, writeFile, rename, chmod, readFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { gunzipSync } from 'node:zlib';
-import { execFileSync, execFile } from 'node:child_process';
-import { promisify } from 'node:util';
+import { execFileSync } from 'node:child_process';
 import path from 'node:path';
+import { buildDownload } from './build-download.mjs';
 
 const version = 'v1.19.32';
 const platform = process.env.CORE_PLATFORM || process.platform;
@@ -11,10 +11,7 @@ const arch = process.env.CORE_ARCH || process.arch;
 const targets = { 'darwin-arm64': 'darwin-arm64', 'darwin-x64': 'darwin-amd64-compatible', 'win32-x64': 'windows-amd64-compatible', 'linux-x64': 'linux-amd64-compatible', 'linux-arm64': 'linux-arm64' };
 const target = targets[`${platform}-${arch}`];
 if (!target) throw new Error(`Unsupported target: ${platform}-${arch}`);
-const request = async (url) => {
-  const { stdout } = await promisify(execFile)('curl', ['--http1.1', '--fail', '--silent', '--show-error', '--location', '--retry', '3', '--retry-all-errors', '--connect-timeout', '20', '--max-time', '180', '--user-agent', 'Luma-build', url], { encoding: 'buffer', maxBuffer: 150 * 1024 * 1024, timeout: 240000 });
-  return new Response(stdout);
-};
+const request = async url => new Response(await buildDownload(url));
 const release = await (await request(`https://api.github.com/repos/MetaCubeX/mihomo/releases/tags/${version}`)).json();
 const filename = `mihomo-${target}-${version}.${platform === 'win32' ? 'zip' : 'gz'}`;
 const asset = release.assets.find(a => a.name === filename);

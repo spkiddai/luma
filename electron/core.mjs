@@ -2,7 +2,7 @@ import { spawn, execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { createServer } from 'node:net';
 import { randomBytes } from 'node:crypto';
-import { access } from 'node:fs/promises';
+import { access, readFile, unlink } from 'node:fs/promises';
 import path from 'node:path';
 import { atomicWrite } from './store.mjs';
 import { normalizeConfig, parseConfig } from './config.mjs';
@@ -77,7 +77,12 @@ export class Core {
     this.groupOrder = (parseConfig(content)['proxy-groups'] || []).map(group => group.name);
     this.runtime = path.join(this.directory, 'runtime.yaml');
     await atomicWrite(this.runtime, content);
-    const child = spawn(this.binary, ['-d', this.directory, '-f', this.runtime], { stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true });
+    // The controller starts before forwarding is ready. The core's post-up hook
+    // runs after its tunnel enters Running. Keep the command constant and pass
+    // the private marker path through an environment variable, never shell text.
+    const markerFile = path.join(this.directory, `.startup-ready-${randomBytes(16).toString('hex')}`);
+    const readyCommand = process.platform === 'win32' ? 'echo ready>"%LUMA_READY_FILE%"' : 'printf ready > "$LUMA_READY_FILE"';
+    const child = spawn(this.binary, ['-d', this.directory, '-f', this.runtime, '-post-up', readyCommand], { stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true, env: { ...process.env, LUMA_READY_FILE: markerFile } });
     this.child = child;
     this.lastSample = null;
     let exitError;
@@ -98,9 +103,11 @@ export class Core {
       this.log(code ? 'error' : 'info', `内核已退出（${code ?? 'signal'}）`);
       if (this.stoppingChild !== child) Promise.resolve(this.onExit()).catch(e => this.log('error', e.message));
     });
-    for (let i = 0; i < 100; i++) {
+    try {
+    for (let i = 0; i < 800; i++) {
       if (exitError || child.exitCode !== null || child.signalCode) break;
       try {
+        if ((await readFile(markerFile, 'utf8')).trim() !== 'ready') throw new Error('Forwarding is not ready');
         const version = await this.request('/version', {}, true);
         this.version = version.version;
         this.running = true; this.startedAt = Date.now();
@@ -114,6 +121,7 @@ export class Core {
     }
     await this.stop();
     throw new Error(`内核启动失败：${exitError || this.logs.at(-2)?.message || '控制接口未就绪'}`);
+    } finally { await unlink(markerFile).catch(error => { if (error.code !== 'ENOENT') throw error; }); }
   }
   async request(endpoint, options = {}, starting = false) {
     if (!starting && !this.running) throw new Error('请先启动内核');

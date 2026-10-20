@@ -26,7 +26,7 @@ test('real mihomo: HTTP proxy routing, authenticated API, mode changes, config r
     const req = http.get({ host: '127.0.0.1', port: store.state.port, headers: { Host: `127.0.0.1:${origin.address().port}` }, path: `http://127.0.0.1:${origin.address().port}/test`, timeout: 5000 }, res => { let body = ''; res.on('data', chunk => body += chunk); res.on('end', () => resolve({ status: res.statusCode, body })); });
     req.on('error', reject); req.on('timeout', () => req.destroy(new Error('timeout')));
   });
-  assert.deepEqual(await proxied(), { status: 200, body: 'luma-proxy-proxy-ok' });
+  assert.deepEqual(await proxied(), { status: 200, body: 'luma-proxy-proxy-ok' }, core.logs.map(log => log.message.replaceAll(core.secret, '[redacted]')).join('\n'));
   await core.request('/configs', { method: 'PATCH', body: JSON.stringify({ mode: 'global' }) });
   assert.equal((await core.request('/configs')).mode, 'global');
   await core.apply(DEFAULT_PROFILE); assert.equal((await core.request('/configs')).mode, 'rule');

@@ -1,10 +1,8 @@
 import { mkdir, writeFile, rename } from 'node:fs/promises';
-import { execFile } from 'node:child_process';
-import { promisify } from 'node:util';
 import { createHash } from 'node:crypto';
+import { buildDownload } from './build-download.mjs';
 
-const run = promisify(execFile);
-const request = async url => (await run('curl', ['--http1.1', '--fail', '--silent', '--show-error', '--location', '--retry', '2', '--retry-all-errors', '--connect-timeout', '20', '--max-time', '150', '--user-agent', 'Luma-build', url], { encoding: 'buffer', maxBuffer: 80 * 1024 * 1024, timeout: 200000 })).stdout;
+const request = url => buildDownload(url, 80 * 1024 * 1024);
 const release = JSON.parse((await request('https://api.github.com/repos/MetaCubeX/meta-rules-dat/releases/tags/latest')).toString());
 const names = { 'geoip.metadb': 'geoip.metadb', 'geoip.dat': 'geoip.dat', 'geosite.dat': 'geosite.dat', 'GeoLite2-ASN.mmdb': 'ASN.mmdb' };
 await mkdir('resources/geodata', { recursive: true });

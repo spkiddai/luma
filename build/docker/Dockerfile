@@ -9,6 +9,6 @@ COPY scripts/ scripts/
 COPY tests/ tests/
 COPY resources/ resources/
 COPY index.html tsconfig.json vite.config.ts LICENSE THIRD_PARTY_NOTICES.md ./
-RUN npm run core:download && npm run geodata:download
+RUN --mount=type=secret,id=github_token LUMA_GITHUB_TOKEN_FILE=/run/secrets/github_token npm run core:download && LUMA_GITHUB_TOKEN_FILE=/run/secrets/github_token npm run geodata:download
 RUN npm run build && npm test
 CMD ["npm", "test"]
