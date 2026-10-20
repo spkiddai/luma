@@ -25,6 +25,7 @@
 
 ```sh
 npm ci
+node node_modules/electron/install.js
 npm run core:download
 npm run geodata:download
 npm run dev
