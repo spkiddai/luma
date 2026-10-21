@@ -17,3 +17,6 @@ artifacts/
 .env
 .env.*
 *.local
+
+# Download website release binaries are deployed separately, never committed.
+website/downloads/

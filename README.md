@@ -1,6 +1,8 @@
 # Luma · 流光
 
-基于 **mihomo v1.19.32** 的独立桌面代理客户端，参考 Clash Verge 的常用操作方式，使用 Electron、React 和 TypeScript 实现。当前提供 macOS Apple Silicon 可运行版；Windows、Linux 有打包入口，尚未进行实际平台验收。
+基于 **mihomo v1.19.32** 的独立桌面代理客户端，参考 Clash Verge 的常用操作方式，使用 Electron、React 和 TypeScript 实现。提供 macOS Apple Silicon、macOS Intel 和 Windows x64 安装包。Apple Silicon 版已完成本机界面验收；Intel、Windows 版已通过云端构建与自动化测试，仍需进一步实机界面验收。Linux 保留打包入口，移动端尚未发布。
+
+**[展示与下载页面](https://proxy.spkiddai.top/)** · 当前版本 **0.2.0**。安装包包含对应平台内核和地理规则数据，不含个人订阅。当前包未签名。下载页提供文件大小、SHA-256 校验值和安装说明；静态网站源码位于 [`website/`](website/README.md)。
 
 ## 已实现
 
