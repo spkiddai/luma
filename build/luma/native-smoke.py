@@ -5,6 +5,7 @@ import http.client
 import http.server
 import json
 import os
+import re
 from pathlib import Path
 import shutil
 import socket
@@ -60,7 +61,7 @@ def core_processes():
     result = subprocess.run(['pgrep','-x','luma-mihomo'],capture_output=True,text=True)
     return result.stdout.split()
 
-def capture_window(pid):
+def capture_window(pid, name):
     # Capture only this synthetic app window, excluding unrelated runner dialogs.
     source = output/'window-id.swift'
     source.write_text('''import CoreGraphics
@@ -78,9 +79,9 @@ for window in windows {
     result = subprocess.run(['swift',str(source),str(pid)],capture_output=True,text=True,timeout=60)
     window_id = result.stdout.strip()
     if result.returncode == 0 and window_id.isdigit():
-        subprocess.run(['screencapture','-x','-o','-l',window_id,str(output/'window.png')],check=False)
+        subprocess.run(['screencapture','-x','-o','-l',window_id,str(output/f'{name}.png')],check=False)
     else:
-        subprocess.run(['screencapture','-x',str(output/'window.png')],check=False)
+        subprocess.run(['screencapture','-x',str(output/f'{name}.png')],check=False)
 
 legacy.joinpath('profiles').mkdir(parents=True, mode=0o700)
 legacy.joinpath('settings.json').write_text(json.dumps({'version':3,'port':proxy_port,'mode':'rule','allowLan':False,'autoStart':True,'selectedProfile':'fixture','profiles':[{'id':'fixture','name':'CI fixture','kind':'local'}]}))
@@ -88,7 +89,19 @@ legacy.joinpath('profiles/fixture.yaml').write_text(json.dumps({'hosts':{'origin
 source_before = legacy.joinpath('profiles/fixture.yaml').read_bytes()
 subprocess.run(['sudo','ditto',str(bundle),str(installed)],check=True)
 try:
-    for iteration in (1,2):
+    for iteration, page, theme, language, screenshot in [
+        (1, '/', 'light', 'en', 'overview-en'),
+        (2, '/', 'light', 'zh', 'overview-zh'),
+        (3, '/proxies', 'dark', 'zh', 'proxies-dark'),
+        (4, '/settings', 'light', 'zh', 'settings-zh'),
+    ]:
+        if iteration > 1:
+            preferences = native / 'verge.yaml'
+            saved = preferences.read_text()
+            for key, value in {'start_page': page, 'theme_mode': theme, 'language': language}.items():
+                saved, count = re.subn(rf'^{key}:.*$', f'{key}: {json.dumps(value)}', saved, flags=re.M)
+                if not count: saved += f'\n{key}: {json.dumps(value)}\n'
+            preferences.write_text(saved)
         with (output / f'app-{iteration}.log').open('wb') as log:
             process = subprocess.Popen([str(installed/'Contents/MacOS/luma')],stdout=log,stderr=log)
             try:
@@ -111,10 +124,9 @@ try:
                 flags = subprocess.check_output(['scutil','--proxy'],text=True)
                 for key in ['HTTPEnable','HTTPSEnable','SOCKSEnable','ProxyAutoConfigEnable']:
                     assert f'{key} : 1' not in flags, 'System proxy must remain disabled'
-                if iteration == 1:
-                    # Forwarding becomes ready before the webview finishes rendering.
-                    time.sleep(10)
-                    capture_window(process.pid)
+                # Forwarding becomes ready before the webview finishes rendering.
+                time.sleep(10)
+                capture_window(process.pid, screenshot)
                 print(json.dumps({'iteration':iteration,'core_count':len(core_processes()),'switches':10,'reloads':5,'migration':'preserved','system_proxy':'off'}),flush=True)
             finally:
                 process.terminate()

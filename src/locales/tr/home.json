@@ -19,12 +19,17 @@
         "traffic": "Trafik İstatistikleri Kartı",
         "tests": "Web Sitesi Testleri Kartı",
         "ip": "IP Bilgi Kartı",
-        "clashInfo": "Clash Bilgi Kartları",
+        "clashInfo": "Mihomo Bilgi Kartları",
         "systemInfo": "Sistem Bilgi Kartları"
       },
       "title": "Ana Sayfa Ayarları"
     },
-    "title": "Ana Sayfa"
+    "title": "Ana Sayfa",
+    "hero": {
+      "eyebrow": "YOUR NETWORK, AT A GLANCE",
+      "title": "A little lighter. A little clearer.",
+      "description": "Your traffic, routes and connection settings in one place."
+    }
   },
   "components": {
     "proxyTun": {
@@ -41,7 +46,7 @@
       }
     },
     "clashInfo": {
-      "title": "Clash Bilgisi",
+      "title": "Mihomo Bilgisi",
       "fields": {
         "coreVersion": "Çekirdek Sürümü",
         "systemProxyAddress": "Sistem Vekil Adresi",
@@ -57,7 +62,7 @@
         "autoLaunch": "Otomatik Başlatma",
         "runningMode": "Çalışma Modu",
         "lastCheckUpdate": "Son Güncelleme Kontrolü",
-        "vergeVersion": "Verge Sürümü"
+        "vergeVersion": "Luma Sürümü"
       },
       "actions": {
         "settings": "Ayarlar"

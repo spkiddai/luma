@@ -20,6 +20,7 @@ import {
   IconButton,
   Skeleton,
   Tooltip,
+  Typography,
 } from '@mui/material'
 import { useLockFn } from 'ahooks'
 import { Suspense, lazy, useCallback, useMemo, useState } from 'react'
@@ -244,7 +245,7 @@ const HomePage = () => {
 
   // 文档链接函数
   const toGithubDoc = useLockFn(() =>
-    openExternalUrl('https://clash-verge-rev.github.io/index.html').catch(
+    openExternalUrl('https://proxy.spkiddai.top/#guide').catch(
       showNotice.error,
     ),
   )
@@ -259,7 +260,7 @@ const HomePage = () => {
       if (!homeCards[cardKey]) return null
 
       return (
-        <Grid size={size} key={cardKey}>
+        <Grid size={{ xs: 6, md: size }} key={cardKey}>
           {component}
         </Grid>
       )
@@ -274,25 +275,15 @@ const HomePage = () => {
         <HomeProfileCard current={current} onProfileUpdated={mutateProfiles} />,
       ),
       renderCard('proxy', <CurrentProxyCard />),
-      renderCard('network', <NetworkSettingsCard />),
-      renderCard('mode', <ClashModeEnhancedCard />),
+
     ],
     [current, mutateProfiles, renderCard],
   )
 
   const nonCriticalCards = useMemo(
     () => [
-      renderCard(
-        'traffic',
-        <EnhancedCard
-          title={t('home.page.cards.trafficStats')}
-          icon={<SpeedOutlined />}
-          iconColor="secondary"
-        >
-          <EnhancedTrafficStats />
-        </EnhancedCard>,
-        12,
-      ),
+      renderCard('network', <NetworkSettingsCard />),
+      renderCard('mode', <ClashModeEnhancedCard />),
       renderCard(
         'test',
         <Suspense fallback={<Skeleton variant="rectangular" height={200} />}>
@@ -323,7 +314,7 @@ const HomePage = () => {
   return (
     <BasePage
       title={t('home.page.title')}
-      contentStyle={{ padding: 2 }}
+      contentStyle={{ padding: 0 }}
       header={
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <Tooltip title={t('home.page.tooltips.lightweightMode')} arrow>
@@ -353,9 +344,26 @@ const HomePage = () => {
         </Box>
       }
     >
-      <Grid container spacing={1.5} columns={{ xs: 6, sm: 6, md: 12 }}>
+      <Box sx={{ mb: 2.5, pt: 0.5 }}>
+        <Typography sx={{ fontSize: 10, letterSpacing: 2, color: 'text.secondary', mb: 0.75 }}>
+          {t('home.page.hero.eyebrow')}
+        </Typography>
+        <Typography component="h1" sx={{ fontSize: { xs: 23, md: 28 }, fontWeight: 600, letterSpacing: '-0.8px', mb: 0.75 }}>
+          {t('home.page.hero.title')}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {t('home.page.hero.description')}
+        </Typography>
+      </Box>
+      <Grid container spacing={2} columns={{ xs: 6, sm: 6, md: 12 }}>
+        {renderCard(
+          'traffic',
+          <EnhancedCard title={t('home.page.cards.trafficStats')} icon={<SpeedOutlined />}>
+            <EnhancedTrafficStats />
+          </EnhancedCard>,
+          12,
+        )}
         {criticalCards}
-
         {nonCriticalCards}
       </Grid>
 

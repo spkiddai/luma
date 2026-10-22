@@ -6,7 +6,15 @@
       "github": "Repositori Github"
     },
     "actionsGroupLabel": "Tautan pengaturan",
-    "title": "Pengaturan"
+    "title": "Pengaturan",
+    "about": {
+      "description": "A lightweight proxy client. Updating preserves your local subscriptions and settings.",
+      "downloads": "Get Luma",
+      "openSource": "Open source & acknowledgements",
+      "attribution": "Luma is an independently maintained derivative of Clash Verge Rev 2.5.8, powered by Mihomo and distributed under GPL-3.0. It does not represent the upstream projects. Original copyright and license notices are included.",
+      "source": "Luma source",
+      "notices": "Third-party notices"
+    }
   },
   "sections": {
     "system": {
@@ -97,7 +105,7 @@
       "system": "System"
     },
     "clash": {
-      "title": "Pengaturan Clash",
+      "title": "Pengaturan Mihomo",
       "form": {
         "fields": {
           "allowLan": "Izinkan LAN",
@@ -108,7 +116,7 @@
           "portConfig": "Konfigurasi Port",
           "external": "Eksternal",
           "webUI": "Antarmuka Web",
-          "clashCore": "Inti Clash",
+          "clashCore": "Inti Mihomo",
           "openUwpTool": "Buka alat UWP",
           "updateGeoData": "Perbarui GeoData",
           "tunnels": {
@@ -157,7 +165,7 @@
   "components": {
     "verge": {
       "basic": {
-        "title": "Pengaturan Dasar Verge",
+        "title": "Pengaturan Dasar Luma",
         "actions": {
           "browse": "Jelajahi"
         },
@@ -180,7 +188,7 @@
         }
       },
       "advanced": {
-        "title": "Pengaturan Lanjutan Verge",
+        "title": "Pengaturan Lanjutan Luma",
         "tooltips": {
           "backupInfo": "Mendukung file konfigurasi cadangan WebDAV",
           "openConfDir": "Jika perangkat lunak berjalan tidak normal, CADANGKAN dan hapus semua file di folder ini lalu mulai ulang perangkat lunak",
@@ -204,7 +212,7 @@
           "liteModeSettings": "LightWeight Mode Settings",
           "exit": "Keluar",
           "exportDiagnostics": "Export Diagnostic Info",
-          "vergeVersion": "Versi Verge"
+          "vergeVersion": "Versi Luma"
         }
       },
       "theme": {
@@ -680,7 +688,7 @@
     },
     "notifications": {
       "clash": {
-        "restartSuccess": "Core Clash Dimulai Ulang",
+        "restartSuccess": "Core Mihomo Dimulai Ulang",
         "versionUpdated": "Versi Core Diperbarui",
         "alreadyLatestVersion": "Sudah menggunakan versi inti terbaru",
         "changeSuccess": "Inti berhasil diubah",
@@ -698,8 +706,8 @@
         "uninstallSuccess": "Layanan Berhasil Dicopot"
       },
       "updater": {
-        "withClashProxySuccess": "Update with Clash proxy successfully",
-        "withClashProxyFailed": "Update failed even with Clash proxy"
+        "withClashProxySuccess": "Update with Mihomo proxy successfully",
+        "withClashProxyFailed": "Update failed even with Mihomo proxy"
       }
     }
   },

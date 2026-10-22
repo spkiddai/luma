@@ -6,7 +6,15 @@
       "github": "GitHub Deposu"
     },
     "actionsGroupLabel": "Ayar bağlantıları",
-    "title": "Ayarlar"
+    "title": "Ayarlar",
+    "about": {
+      "description": "A lightweight proxy client. Updating preserves your local subscriptions and settings.",
+      "downloads": "Get Luma",
+      "openSource": "Open source & acknowledgements",
+      "attribution": "Luma is an independently maintained derivative of Clash Verge Rev 2.5.8, powered by Mihomo and distributed under GPL-3.0. It does not represent the upstream projects. Original copyright and license notices are included.",
+      "source": "Luma source",
+      "notices": "Third-party notices"
+    }
   },
   "sections": {
     "system": {
@@ -97,7 +105,7 @@
       "system": "Sistem"
     },
     "clash": {
-      "title": "Clash Ayarı",
+      "title": "Mihomo Ayarı",
       "form": {
         "fields": {
           "allowLan": "LAN'a İzin Ver",
@@ -108,7 +116,7 @@
           "portConfig": "Port Yapılandırması",
           "external": "Harici",
           "webUI": "Web Arayüzü",
-          "clashCore": "Clash Çekirdeği",
+          "clashCore": "Mihomo Çekirdeği",
           "openUwpTool": "UWP Aracını Aç",
           "updateGeoData": "GeoData'yı Güncelle",
           "tunnels": {
@@ -157,7 +165,7 @@
   "components": {
     "verge": {
       "basic": {
-        "title": "Verge Temel Ayarı",
+        "title": "Luma Temel Ayarı",
         "actions": {
           "browse": "Gözat"
         },
@@ -180,7 +188,7 @@
         }
       },
       "advanced": {
-        "title": "Verge Gelişmiş Ayarı",
+        "title": "Luma Gelişmiş Ayarı",
         "tooltips": {
           "backupInfo": "WebDAV yedekleme yapılandırma dosyalarını destekler",
           "openConfDir": "Yazılım anormal çalışıyorsa, bu klasördeki tüm dosyaları YEDEKLEYİN ve silin, ardından yazılımı yeniden başlatın",
@@ -204,7 +212,7 @@
           "liteModeSettings": "Hafif Mod Ayarları",
           "exit": "Çıkış",
           "exportDiagnostics": "Tanılama Bilgilerini Dışa Aktar",
-          "vergeVersion": "Verge Sürümü"
+          "vergeVersion": "Luma Sürümü"
         }
       },
       "theme": {
@@ -680,7 +688,7 @@
     },
     "notifications": {
       "clash": {
-        "restartSuccess": "Clash Çekirdeği Yeniden Başlatıldı",
+        "restartSuccess": "Mihomo Çekirdeği Yeniden Başlatıldı",
         "versionUpdated": "Çekirdek Sürümü Güncellendi",
         "alreadyLatestVersion": "Zaten en yeni çekirdek sürümünü kullanıyorsunuz",
         "changeSuccess": "Çekirdek başarıyla değiştirildi",
@@ -698,8 +706,8 @@
         "uninstallSuccess": "Hizmet Başarıyla Kaldırıldı"
       },
       "updater": {
-        "withClashProxySuccess": "Clash vekil ile güncelleme başarılı",
-        "withClashProxyFailed": "Clash vekil ile bile güncelleme başarısız oldu"
+        "withClashProxySuccess": "Mihomo vekil ile güncelleme başarılı",
+        "withClashProxyFailed": "Mihomo vekil ile bile güncelleme başarısız oldu"
       }
     }
   },

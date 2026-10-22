@@ -66,7 +66,7 @@ const CompactStatCard = memo(
           borderRadius: 2,
           bgcolor: alpha(colorValue, 0.05),
           border: `1px solid ${alpha(colorValue, 0.15)}`,
-          padding: '8px',
+          padding: '10px',
           transition: 'all 0.2s ease-in-out',
           cursor: onClick ? 'pointer' : 'default',
           '&:hover': onClick
@@ -110,7 +110,7 @@ const CompactStatCard = memo(
             <Typography
               variant="body1"
               noWrap
-              sx={{ mr: 0.5, fontWeight: 'bold' }}
+              sx={{ mr: 0.5, fontWeight: 600, fontSize: 20 }}
             >
               {value}
             </Typography>
@@ -185,7 +185,7 @@ export const EnhancedTrafficStats = () => {
       <Paper
         elevation={0}
         sx={{
-          height: 130,
+          height: 145,
           cursor: 'pointer',
           border: `1px solid ${alpha(theme.palette.divider, 0.2)}`,
           borderRadius: 2,
@@ -259,7 +259,7 @@ export const EnhancedTrafficStats = () => {
         console.error('[EnhancedTrafficStats] 组件错误:', error, errorInfo)
       }}
     >
-      <Grid container spacing={1} columns={{ xs: 8, sm: 8, md: 12 }}>
+      <Grid container spacing={1} columns={12}>
         {trafficGraph && (
           <Grid size={12}>
             {/* 流量图表区域 */}

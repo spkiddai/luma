@@ -83,9 +83,9 @@ tray:
   openDir: Dizini Aç
   appLog: Uygulama Günlüğü
   coreLog: Çekirdek Günlüğü
-  restartClash: Clash Çekirdeğini Yeniden Başlat
+  restartClash: Mihomo Çekirdeğini Yeniden Başlat
   restartApp: Uygulamayı Yeniden Başlat
-  vergeVersion: Verge Sürümü
+  vergeVersion: Luma Sürümü
   more: Daha Fazla
   exit: Çıkış
   tooltip:

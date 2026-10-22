@@ -62,7 +62,7 @@ export const ProxyRender = memo(function ProxyRender(props: RenderProps) {
   const headerId = useId()
   const mode = useThemeMode()
   const isDark = mode === 'dark'
-  const itembackgroundcolor = isDark ? '#282A36' : '#ffffff'
+  const itembackgroundcolor = isDark ? '#202F28' : '#ffffff'
   const iconCachePath = useIconCache({
     icon: group.icon,
     cacheKey: group.name.replaceAll(' ', ''),
@@ -210,7 +210,7 @@ export const ProxyRender = memo(function ProxyRender(props: RenderProps) {
     )
 
     return (
-      <div style={{ padding: '4px 8px' }}>
+      <div style={{ padding: '5px 18px' }}>
         <ListItemButton
           dense
           sx={{
@@ -222,7 +222,9 @@ export const ProxyRender = memo(function ProxyRender(props: RenderProps) {
           style={{
             background: itembackgroundcolor,
             height: '100%',
-            borderRadius: '8px',
+            borderRadius: '12px',
+            border: '1px solid var(--divider-color)',
+            borderLeft: '3px solid var(--primary-main)',
           }}
           onClick={() => {
             if (headState?.open) {

@@ -19,12 +19,17 @@
         "traffic": "Traffic Stats Card",
         "tests": "Website Tests Card",
         "ip": "IP Information Card",
-        "clashInfo": "Clash Info Cards",
+        "clashInfo": "Mihomo Info Cards",
         "systemInfo": "System Info Cards"
       },
       "title": "Home Settings"
     },
-    "title": "Home"
+    "title": "Home",
+    "hero": {
+      "eyebrow": "YOUR NETWORK, AT A GLANCE",
+      "title": "A little lighter. A little clearer.",
+      "description": "Your traffic, routes and connection settings in one place."
+    }
   },
   "components": {
     "proxyTun": {
@@ -41,7 +46,7 @@
       }
     },
     "clashInfo": {
-      "title": "Clash Info",
+      "title": "Mihomo Info",
       "fields": {
         "coreVersion": "Core Version",
         "systemProxyAddress": "System Proxy Address",
@@ -57,7 +62,7 @@
         "autoLaunch": "Автостарт",
         "runningMode": "Running Mode",
         "lastCheckUpdate": "Last Check Update",
-        "vergeVersion": "Verge версиясе"
+        "vergeVersion": "Luma версиясе"
       },
       "actions": {
         "settings": "Көйләүләр"

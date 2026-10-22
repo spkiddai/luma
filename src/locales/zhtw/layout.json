@@ -2,14 +2,14 @@
   "components": {
     "navigation": {
       "tabs": {
-        "home": "首 頁",
-        "proxies": "代 理",
-        "profiles": "訂 閱",
-        "connections": "連 線",
-        "rules": "規 則",
-        "logs": "日 誌",
-        "unlock": "解 鎖",
-        "settings": "設 定"
+        "home": "概覽",
+        "proxies": "代理節點",
+        "profiles": "訂閱設定",
+        "connections": "活動連線",
+        "rules": "分流規則",
+        "logs": "執行紀錄",
+        "unlock": "連線測試",
+        "settings": "偏好設定"
       },
       "menu": {
         "reorderMode": "選單排序模式",

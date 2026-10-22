@@ -45,20 +45,20 @@ export const EnhancedCard = forwardRef<HTMLElement, EnhancedCardProps>(
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
-          borderRadius: 2,
-          backgroundColor: isDark ? '#282a36' : '#ffffff',
+          borderRadius: '16px',
+          border: '1px solid',
+          borderColor: 'divider',
+          backgroundColor: isDark ? '#202F28' : '#FFFFFF',
         }}
         ref={ref}
       >
         <Box
           sx={{
             px: 2,
-            py: 1,
+            py: 1.5,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            borderBottom: 1,
-            borderColor: 'divider',
           }}
         >
           <Box
@@ -75,10 +75,10 @@ export const EnhancedCard = forwardRef<HTMLElement, EnhancedCardProps>(
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                borderRadius: 1.5,
-                width: 38,
-                height: 38,
-                mr: 1.5,
+                borderRadius: '8px',
+                width: 30,
+                height: 30,
+                mr: 1,
                 flexShrink: 0,
                 backgroundColor: alpha(theme.palette[iconColor].main, 0.12),
                 color: theme.palette[iconColor].main,
@@ -92,8 +92,8 @@ export const EnhancedCard = forwardRef<HTMLElement, EnhancedCardProps>(
                   variant="h6"
                   sx={{
                     ...titleTruncateStyle,
-                    fontWeight: 'medium',
-                    fontSize: 18,
+                    fontWeight: 600,
+                    fontSize: 14,
                   }}
                   title={title}
                 >

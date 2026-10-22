@@ -2,14 +2,14 @@
   "components": {
     "navigation": {
       "tabs": {
-        "home": "Home",
-        "proxies": "Proxies",
-        "profiles": "Profiles",
+        "home": "Overview",
+        "proxies": "Proxy routes",
+        "profiles": "Subscriptions",
         "connections": "Connections",
-        "rules": "Rules",
-        "logs": "Logs",
-        "unlock": "Test",
-        "settings": "Settings"
+        "rules": "Routing rules",
+        "logs": "Activity log",
+        "unlock": "Diagnostics",
+        "settings": "Preferences"
       },
       "menu": {
         "reorderMode": "Menu reorder mode",

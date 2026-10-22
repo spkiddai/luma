@@ -83,9 +83,9 @@ tray:
   openDir: 開啟目錄
   appLog: 應用程式日誌
   coreLog: 核心日誌
-  restartClash: 重新啟動 Clash 核心
+  restartClash: 重新啟動 Mihomo 核心
   restartApp: 重新啟動應用程式
-  vergeVersion: Verge 版本
+  vergeVersion: Luma 版本
   more: 更多
   exit: 離開
   tooltip:

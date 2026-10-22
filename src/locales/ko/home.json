@@ -19,12 +19,17 @@
         "traffic": "트래픽 통계 카드",
         "tests": "웹사이트 테스트 카드",
         "ip": "IP 정보 카드",
-        "clashInfo": "Clash 정보 카드",
+        "clashInfo": "Mihomo 정보 카드",
         "systemInfo": "시스템 정보 카드"
       },
       "title": "홈 설정"
     },
-    "title": "홈"
+    "title": "홈",
+    "hero": {
+      "eyebrow": "YOUR NETWORK, AT A GLANCE",
+      "title": "A little lighter. A little clearer.",
+      "description": "Your traffic, routes and connection settings in one place."
+    }
   },
   "components": {
     "proxyTun": {
@@ -41,7 +46,7 @@
       }
     },
     "clashInfo": {
-      "title": "Clash 정보",
+      "title": "Mihomo 정보",
       "fields": {
         "coreVersion": "코어 버전",
         "systemProxyAddress": "시스템 프록시 주소",
@@ -57,7 +62,7 @@
         "autoLaunch": "자동 실행",
         "runningMode": "실행 모드",
         "lastCheckUpdate": "마지막 업데이트 확인",
-        "vergeVersion": "Verge 버전"
+        "vergeVersion": "Luma 버전"
       },
       "actions": {
         "settings": "설정"

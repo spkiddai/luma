@@ -6,7 +6,15 @@
       "github": "Dirección del proyecto en GitHub"
     },
     "actionsGroupLabel": "Enlaces de configuración",
-    "title": "Ajustes"
+    "title": "Ajustes",
+    "about": {
+      "description": "A lightweight proxy client. Updating preserves your local subscriptions and settings.",
+      "downloads": "Get Luma",
+      "openSource": "Open source & acknowledgements",
+      "attribution": "Luma is an independently maintained derivative of Clash Verge Rev 2.5.8, powered by Mihomo and distributed under GPL-3.0. It does not represent the upstream projects. Original copyright and license notices are included.",
+      "source": "Luma source",
+      "notices": "Third-party notices"
+    }
   },
   "sections": {
     "system": {
@@ -97,7 +105,7 @@
       "system": "System"
     },
     "clash": {
-      "title": "Ajustes de Clash",
+      "title": "Ajustes de Mihomo",
       "form": {
         "fields": {
           "allowLan": "Conexión a la red local",
@@ -108,7 +116,7 @@
           "portConfig": "Configuración de puerto",
           "external": "Control externo",
           "webUI": "Interfaz web",
-          "clashCore": "Núcleo de Clash",
+          "clashCore": "Núcleo de Mihomo",
           "openUwpTool": "Abrir herramienta UWP",
           "updateGeoData": "Actualizar GeoData",
           "tunnels": {
@@ -157,7 +165,7 @@
   "components": {
     "verge": {
       "basic": {
-        "title": "Ajustes básicos de Verge",
+        "title": "Ajustes básicos de Luma",
         "actions": {
           "browse": "Examinar"
         },
@@ -180,7 +188,7 @@
         }
       },
       "advanced": {
-        "title": "Ajustes avanzados de Verge",
+        "title": "Ajustes avanzados de Luma",
         "tooltips": {
           "backupInfo": "Soporte para la copia de seguridad de archivos de configuración a través de WebDAV",
           "openConfDir": "Si el software no funciona correctamente, !realice una copia de seguridad! y elimine todos los archivos de esta carpeta, luego reinicie el software.",
@@ -204,7 +212,7 @@
           "liteModeSettings": "Configuración del modo ligero",
           "exit": "Salir",
           "exportDiagnostics": "Exportar información de diagnóstico",
-          "vergeVersion": "Versión de Verge"
+          "vergeVersion": "Versión de Luma"
         }
       },
       "theme": {
@@ -680,7 +688,7 @@
     },
     "notifications": {
       "clash": {
-        "restartSuccess": "Núcleo de Clash reiniciado",
+        "restartSuccess": "Núcleo de Mihomo reiniciado",
         "versionUpdated": "Versión del núcleo actualizada",
         "alreadyLatestVersion": "Ya estás utilizando la versión más reciente del núcleo",
         "changeSuccess": "Núcleo cambiado con éxito",
@@ -698,8 +706,8 @@
         "uninstallSuccess": "Servicio desinstalado con éxito"
       },
       "updater": {
-        "withClashProxySuccess": "Actualización con el proxy de Clash exitosa",
-        "withClashProxyFailed": "Error al actualizar incluso con el proxy de Clash"
+        "withClashProxySuccess": "Actualización con el proxy de Mihomo exitosa",
+        "withClashProxyFailed": "Error al actualizar incluso con el proxy de Mihomo"
       }
     }
   },

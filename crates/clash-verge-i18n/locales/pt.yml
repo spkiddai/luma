@@ -81,9 +81,9 @@ tray:
   openDir: Abrir diretório
   appLog: Log do aplicativo
   coreLog: Log do núcleo
-  restartClash: Reiniciar o núcleo do Clash
+  restartClash: Reiniciar o núcleo do Mihomo
   restartApp: Reiniciar o aplicativo
-  vergeVersion: Versão do Verge
+  vergeVersion: Versão do Luma
   more: Mais
   exit: Sair
   tooltip:

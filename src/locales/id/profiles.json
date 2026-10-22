@@ -40,8 +40,8 @@
         "updateFailed": "Gagal memperbarui profil"
       },
       "notifications": {
-        "importRetry": "Import failed, retrying with Clash proxy...",
-        "importFail": "Import failed even with Clash proxy",
+        "importRetry": "Import failed, retrying with Mihomo proxy...",
+        "importFail": "Import failed even with Mihomo proxy",
         "importNeedsRefresh": "Profile imported but may need manual refresh",
         "importSuccess": "Profile imported successfully, please restart if not visible",
         "profileSwitched": "Profil Beralih",
@@ -122,7 +122,7 @@
         "httpTimeout": "HTTP Request Timeout",
         "updateInterval": "Interval Pembaruan",
         "useSystemProxy": "Gunakan Proksi Sistem",
-        "useClashProxy": "Gunakan Proksi Clash",
+        "useClashProxy": "Gunakan Proksi Mihomo",
         "acceptInvalidCerts": "Terima Sertifikat Tidak Valid (Bahaya)",
         "allowAutoUpdate": "Allow Auto Update"
       },
@@ -141,8 +141,8 @@
       },
       "feedback": {
         "notifications": {
-          "creationRetry": "Profile creation failed, retrying with Clash proxy...",
-          "creationSuccess": "Profile creation succeeded with Clash proxy"
+          "creationRetry": "Profile creation failed, retrying with Mihomo proxy...",
+          "creationSuccess": "Profile creation succeeded with Mihomo proxy"
         }
       }
     },

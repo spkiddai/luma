@@ -15,6 +15,8 @@ it does not establish an external network speed improvement.
 ## Luma-specific changes
 
 - Product name, icons, bundle ID, deep link and update destination.
+- Luma navigation, green palette, overview hierarchy and user-facing terminology.
+  The About dialog identifies the fork and links to source and license notices.
 - Separate data, IPC, process and execution-lock names. The vendored IPC library
   preserves upstream execution guards under the Luma namespace. Privileged service
   installation is disabled, and only the stable unprivileged core is bundled.

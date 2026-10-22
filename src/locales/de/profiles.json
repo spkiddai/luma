@@ -40,8 +40,8 @@
         "updateFailed": "Abonnement konnte nicht aktualisiert werden"
       },
       "notifications": {
-        "importRetry": "Import des Abonnements fehlgeschlagen. Versuche es mit dem Clash-Proxy erneut...",
-        "importFail": "Import des Abonnements auch mit Clash-Proxy fehlgeschlagen",
+        "importRetry": "Import des Abonnements fehlgeschlagen. Versuche es mit dem Mihomo-Proxy erneut...",
+        "importFail": "Import des Abonnements auch mit Mihomo-Proxy fehlgeschlagen",
         "importNeedsRefresh": "Abonnement importiert, muss aber eventuell manuell aktualisiert werden",
         "importSuccess": "Abonnement erfolgreich importiert. Falls es nicht angezeigt wird, starten Sie die App bitte neu",
         "profileSwitched": "Abonnement gewechselt",
@@ -141,8 +141,8 @@
       },
       "feedback": {
         "notifications": {
-          "creationRetry": "Erstellung des Abonnements fehlgeschlagen. Versuche es mit dem Clash-Proxy erneut...",
-          "creationSuccess": "Erstellung des Abonnements mit Clash-Proxy erfolgreich"
+          "creationRetry": "Erstellung des Abonnements fehlgeschlagen. Versuche es mit dem Mihomo-Proxy erneut...",
+          "creationSuccess": "Erstellung des Abonnements mit Mihomo-Proxy erfolgreich"
         }
       }
     },

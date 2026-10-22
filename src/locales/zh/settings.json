@@ -6,11 +6,19 @@
       "github": "GitHub 项目地址"
     },
     "actionsGroupLabel": "设置相关链接",
-    "title": "设置"
+    "title": "偏好设置",
+    "about": {
+      "description": "轻巧的网络代理客户端。更新安装包会保留本地订阅与设置。",
+      "downloads": "获取安装包",
+      "openSource": "开源与致谢",
+      "attribution": "Luma 是独立维护的衍生项目，基于 Clash Verge Rev 2.5.8 开发，使用 Mihomo 内核，按 GPL-3.0 发布；不代表上游项目。原作者版权与许可证随安装包保留。",
+      "source": "Luma 源码",
+      "notices": "第三方声明"
+    }
   },
   "sections": {
     "system": {
-      "title": "系统设置",
+      "title": "启动与代理",
       "toggles": {
         "tunMode": "虚拟网卡模式",
         "systemProxy": "系统代理"
@@ -97,7 +105,7 @@
       "system": "系统"
     },
     "clash": {
-      "title": "Clash 设置",
+      "title": "网络与内核",
       "form": {
         "fields": {
           "allowLan": "局域网连接",
@@ -108,7 +116,7 @@
           "portConfig": "端口设置",
           "external": "外部控制",
           "webUI": "网页界面",
-          "clashCore": "Clash 内核",
+          "clashCore": "Mihomo 内核",
           "openUwpTool": "UWP 工具",
           "updateGeoData": "更新 GeoData",
           "tunnels": {
@@ -157,7 +165,7 @@
   "components": {
     "verge": {
       "basic": {
-        "title": "Verge 基础设置",
+        "title": "外观与交互",
         "actions": {
           "browse": "浏览"
         },
@@ -180,18 +188,18 @@
         }
       },
       "advanced": {
-        "title": "Verge 高级设置",
+        "title": "数据与应用",
         "tooltips": {
           "backupInfo": "支持本地或 WebDAV 方式备份配置文件",
           "openConfDir": "如果软件运行异常，!备份!并删除此文件夹下的所有文件，重启软件",
           "liteMode": "关闭 GUI 界面，仅保留内核运行"
         },
         "actions": {
-          "copyVersion": "复制 Verge 版本号"
+          "copyVersion": "复制 Luma 版本号"
         },
         "notifications": {
           "latestVersion": "当前已是最新版本",
-          "versionCopied": "Verge 版本已复制到剪贴板"
+          "versionCopied": "Luma 版本已复制到剪贴板"
         },
         "fields": {
           "backupSetting": "备份设置",
@@ -199,12 +207,12 @@
           "openConfDir": "配置目录",
           "openCoreDir": "内核目录",
           "openLogsDir": "日志目录",
-          "checkUpdates": "检查更新",
+          "checkUpdates": "关于 Luma",
           "openDevTools": "开发者工具",
           "liteModeSettings": "轻量模式设置",
           "exit": "退出",
           "exportDiagnostics": "导出诊断信息",
-          "vergeVersion": "Verge 版本"
+          "vergeVersion": "Luma 版本"
         }
       },
       "theme": {
@@ -680,7 +688,7 @@
     },
     "notifications": {
       "clash": {
-        "restartSuccess": "已重启 Clash 内核",
+        "restartSuccess": "已重启 Mihomo 内核",
         "versionUpdated": "内核版本已更新",
         "alreadyLatestVersion": "已经是最新内核版本",
         "changeSuccess": "内核切换成功",
@@ -698,8 +706,8 @@
         "uninstallSuccess": "已成功卸载服务"
       },
       "updater": {
-        "withClashProxySuccess": "使用 Clash 代理更新成功",
-        "withClashProxyFailed": "使用 Clash 代理更新失败"
+        "withClashProxySuccess": "使用 Mihomo 代理更新成功",
+        "withClashProxyFailed": "使用 Mihomo 代理更新失败"
       }
     }
   },

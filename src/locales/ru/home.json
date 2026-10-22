@@ -19,12 +19,17 @@
         "traffic": "Карточка трафика",
         "tests": "Карточка проверки доступности сайтов",
         "ip": "Информация об IP",
-        "clashInfo": "Информация о Clash",
+        "clashInfo": "Информация о Mihomo",
         "systemInfo": "Информация о системе"
       },
       "title": "Настройки главной страницы"
     },
-    "title": "Главная"
+    "title": "Главная",
+    "hero": {
+      "eyebrow": "YOUR NETWORK, AT A GLANCE",
+      "title": "A little lighter. A little clearer.",
+      "description": "Your traffic, routes and connection settings in one place."
+    }
   },
   "components": {
     "proxyTun": {
@@ -41,7 +46,7 @@
       }
     },
     "clashInfo": {
-      "title": "Информация о Clash",
+      "title": "Информация о Mihomo",
       "fields": {
         "coreVersion": "Версия ядра",
         "systemProxyAddress": "Адрес системного прокси",

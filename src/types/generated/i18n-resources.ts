@@ -171,6 +171,11 @@ export interface TranslationResources {
           proxyMode: string
           trafficStats: string
         }
+        hero: {
+          description: string
+          eyebrow: string
+          title: string
+        }
         settings: {
           cards: {
             clashInfo: string
@@ -1239,6 +1244,14 @@ export interface TranslationResources {
         }
       }
       page: {
+        about: {
+          attribution: string
+          description: string
+          downloads: string
+          notices: string
+          openSource: string
+          source: string
+        }
         actions: {
           github: string
           manual: string

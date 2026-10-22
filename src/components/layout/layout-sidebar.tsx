@@ -5,10 +5,10 @@ import { useTranslation } from 'react-i18next'
 
 import iconDark from '@/assets/image/icon_dark.svg?react'
 import iconLight from '@/assets/image/icon_light.svg?react'
-import LogoSvg from '@/assets/image/logo.svg?react'
 import { useVerge } from '@/hooks/use-verge'
 import { useNavMenuOrder } from '@/pages/_layout/hooks'
 import { navItems } from '@/pages/_navigation'
+import { version } from '@root/package.json'
 
 import { SortableItem } from '../base'
 
@@ -125,26 +125,15 @@ export const LayoutSidebar = (props: LayoutSidebarProps) => {
     <div className="layout-content__left">
       {/* Logo */}
       <div className="the-logo" data-tauri-drag-region="false">
-        <div
-          data-tauri-drag-region="true"
-          style={{
-            height: '27px',
-            display: 'flex',
-            justifyContent: 'space-between',
-          }}
-        >
+        <div className="luma-brand" data-tauri-drag-region="true">
           <SvgIcon
             component={isDark ? iconDark : iconLight}
-            style={{
-              height: '36px',
-              width: '36px',
-              marginTop: '-3px',
-              marginRight: '5px',
-              marginLeft: '-3px',
-            }}
             inheritViewBox
           />
-          <LogoSvg fill={isDark ? 'white' : 'black'} />
+          <div className="luma-brand__name">
+            <strong>Luma<span>流光</span></strong>
+            <small>NETWORK, SIMPLIFIED</small>
+          </div>
         </div>
         <UpdateButton className="the-newbtn" />
       </div>
@@ -226,6 +215,7 @@ export const LayoutSidebar = (props: LayoutSidebarProps) => {
       <div className="the-traffic">
         <LayoutTraffic />
       </div>
+      <div className="luma-sidebar-footer">Luma <span>{version}</span></div>
     </div>
   )
 }

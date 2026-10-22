@@ -1,7 +1,7 @@
 name: Build Luma desktop
 on:
   push:
-    branches: [main, codex/luma-verge-rebuild]
+    branches: [main, codex/luma-verge-rebuild, codex/luma-interface]
     tags: ['v*']
     paths-ignore: ['website/**', 'docs/**', '**/*.md']
   pull_request:
@@ -78,10 +78,10 @@ jobs:
         if: matrix.platform == 'win'
         shell: pwsh
         run: |
-          New-Item -ItemType Directory -Force release/0.3.0
-          Copy-Item target/${{ matrix.target }}/release/bundle/nsis/*.exe release/0.3.0/Luma-0.3.0-win-x64.exe
-          $hash = (Get-FileHash release/0.3.0/Luma-0.3.0-win-x64.exe -Algorithm SHA256).Hash.ToLower()
-          "$hash  Luma-0.3.0-win-x64.exe" | Out-File -Encoding ascii release/0.3.0/Luma-0.3.0-win-x64.exe.sha256
+          New-Item -ItemType Directory -Force release/0.3.1
+          Copy-Item target/${{ matrix.target }}/release/bundle/nsis/*.exe release/0.3.1/Luma-0.3.1-win-x64.exe
+          $hash = (Get-FileHash release/0.3.1/Luma-0.3.1-win-x64.exe -Algorithm SHA256).Hash.ToLower()
+          "$hash  Luma-0.3.1-win-x64.exe" | Out-File -Encoding ascii release/0.3.1/Luma-0.3.1-win-x64.exe.sha256
       - uses: actions/upload-artifact@v4
         if: always()
         with:

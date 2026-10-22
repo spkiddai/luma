@@ -18,10 +18,11 @@ MMDB (`geoip.metadb`), GeoIP (`geoip.dat`), GeoSite (`geosite.dat`) and ASN (`AS
 
 ## Application dependencies
 
-Electron (MIT and Chromium third-party notices), React (MIT), React DOM (MIT), YAML (ISC), Lucide (ISC). Dependency licenses are retained with the installed production packages. Electron's distribution includes its own `LICENSE` and `LICENSES.chromium.html`. Development and packaging tools are listed in `package.json` and pinned in `package-lock.json`.
+The desktop application uses Tauri (MIT OR Apache-2.0), React and React DOM (MIT), Material UI (MIT), and the other dependencies pinned in `pnpm-lock.yaml` and `Cargo.lock`. Their upstream license notices remain in their source distributions. The application and its derivative source are distributed under GPL-3.0-only; `LICENSE` is also bundled as `Resources/licenses/Luma-LICENSE`. The former Electron implementation is no longer shipped in Luma 0.3.
+
 
 ## Clash Verge Rev
 
-Luma 0.3 incorporates Clash Verge Rev v2.5.8, commit 4337bd85758d54d7b9044b2da3c9ac1176eae1f3, licensed GPL-3.0-only. Copyright remains with zzzgydi, Tunglies, wonfen, MystiPanda and the upstream contributors. Source: https://github.com/clash-verge-rev/clash-verge-rev/tree/v2.5.8 . Luma changes product identity, desktop capabilities, migration, packaging and update destinations.
+Luma 0.3 incorporates Clash Verge Rev v2.5.8, commit 4337bd85758d54d7b9044b2da3c9ac1176eae1f3, licensed GPL-3.0-only. Copyright remains with zzzgydi, Tunglies, wonfen, MystiPanda and the upstream contributors. Source: https://github.com/clash-verge-rev/clash-verge-rev/tree/v2.5.8 . Luma changes product identity, navigation, theme, overview layout, display terminology, desktop capabilities, migration, packaging and update destinations.
 
 The vendored clash-verge-service-ipc v2.7.6 library (GPL-3.0, Tunglies) retains upstream execution ownership and shutdown guards with a distinct Luma namespace. Its privileged service is not shipped. Source and modification notes are in third_party/clash-verge-service-ipc/.

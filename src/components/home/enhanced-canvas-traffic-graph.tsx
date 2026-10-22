@@ -1128,6 +1128,7 @@ export const EnhancedCanvasTrafficGraph = memo(
             )}
           </Box>
 
+          {import.meta.env.DEV && (
           <Box
             sx={{
               position: 'absolute',
@@ -1145,6 +1146,7 @@ export const EnhancedCanvasTrafficGraph = memo(
               fps: currentFPS,
             })}
           </Box>
+          )}
 
           {tooltipData.visible && (
             <Box

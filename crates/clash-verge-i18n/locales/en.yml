@@ -83,9 +83,9 @@ tray:
   openDir: Open Directory
   appLog: Application Log
   coreLog: Core Log
-  restartClash: Restart Clash Core
+  restartClash: Restart Mihomo Core
   restartApp: Restart Application
-  vergeVersion: Verge Version
+  vergeVersion: Luma Version
   more: More
   exit: Exit
   tooltip:

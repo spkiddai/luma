@@ -19,18 +19,23 @@
         "traffic": "流量統計卡",
         "tests": "網站測試卡",
         "ip": "IP資訊卡",
-        "clashInfo": "Clash 資訊卡",
+        "clashInfo": "核心狀態",
         "systemInfo": "系統資訊卡"
       },
       "title": "首頁設定"
     },
-    "title": "首頁"
+    "title": "概覽",
+    "hero": {
+      "eyebrow": "LUMA / NETWORK",
+      "title": "連線之間，自在流動。",
+      "description": "查看流量、切換節點，讓每一條連線清晰可見。"
+    }
   },
   "components": {
     "proxyTun": {
       "status": {
         "systemProxyEnabled": "系統代理已啟用，您的應用程式將透過代理存取網路",
-        "systemProxyDisabled": "系統代理已關閉，建議大多數使用者開啟此選項",
+        "systemProxyDisabled": "系統代理已關閉，可在瀏覽器或其他應用程式中手動設定代理位址。",
         "tunModeServiceRequired": "虛擬網路介面卡模式需要服務模式，請先安裝服務",
         "tunModeEnabled": "虛擬網路介面卡模式已啟用，應用程式將透過虛擬網路介面卡存取網路",
         "tunModeDisabled": "虛擬網路介面卡模式已關閉，適用於特殊應用程式"
@@ -41,7 +46,7 @@
       }
     },
     "clashInfo": {
-      "title": "Clash 資訊",
+      "title": "核心狀態",
       "fields": {
         "coreVersion": "內核版本",
         "systemProxyAddress": "系統代理位址",
@@ -57,7 +62,7 @@
         "autoLaunch": "開機自啟",
         "runningMode": "執行模式",
         "lastCheckUpdate": "最後檢查更新",
-        "vergeVersion": "Verge 版本"
+        "vergeVersion": "Luma 版本"
       },
       "actions": {
         "settings": "設定"
@@ -149,7 +154,7 @@
       "descriptions": {
         "rule": "依照規則自動選擇代理。",
         "global": "將所有網路請求轉送至所選代理。",
-        "direct": "略過代理，直接連線至網際網路。"
+        "direct": "流量直接連線至目標網站，不經過遠端代理節點。"
       }
     }
   }

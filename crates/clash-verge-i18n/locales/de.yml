@@ -30,13 +30,13 @@ notifications:
     title: Beenden steht bevor
     body: Luma wird gleich beendet.
   updateReady:
-    title: Clash-Verge-Update
+    title: Luma-Update
     body: Eine neue Version (v{version}) wurde heruntergeladen und kann installiert werden.
     installNow: Jetzt installieren
     later: Später
 service:
-  adminInstallPrompt: Für die Installation des Clash-Verge-Dienstes sind Administratorrechte erforderlich.
-  adminUninstallPrompt: Für die Deinstallation des Clash-Verge-Dienstes sind Administratorrechte erforderlich.
+  adminInstallPrompt: Für die Installation des Luma-Dienstes sind Administratorrechte erforderlich.
+  adminUninstallPrompt: Für die Deinstallation des Luma-Dienstes sind Administratorrechte erforderlich.
 core:
   alreadyRunning: 'Der Kern kann nicht gestartet werden: Ein Kernprozess läuft bereits. Beenden Sie die zugehörige App oder den verbliebenen Prozess und versuchen Sie es erneut. Wenn das Problem weiterhin besteht, starten Sie den Computer neu.'
 launchGuard:
@@ -83,9 +83,9 @@ tray:
   openDir: Verzeichnis öffnen
   appLog: Anwendungslog
   coreLog: Core-Log
-  restartClash: Clash-Core neu starten
+  restartClash: Mihomo-Core neu starten
   restartApp: Anwendung neu starten
-  vergeVersion: Verge-Version
+  vergeVersion: Luma-Version
   more: Mehr
   exit: Beenden
   tooltip:

@@ -40,8 +40,8 @@
         "updateFailed": "به‌روزرسانی پروفایل ناموفق بود"
       },
       "notifications": {
-        "importRetry": "Import failed, retrying with Clash proxy...",
-        "importFail": "Import failed even with Clash proxy",
+        "importRetry": "Import failed, retrying with Mihomo proxy...",
+        "importFail": "Import failed even with Mihomo proxy",
         "importNeedsRefresh": "Profile imported but may need manual refresh",
         "importSuccess": "Profile imported successfully, please restart if not visible",
         "profileSwitched": "پروفایل تغییر یافت",
@@ -122,7 +122,7 @@
         "httpTimeout": "HTTP Request Timeout",
         "updateInterval": "فاصله زمانی به‌روزرسانی",
         "useSystemProxy": "استفاده از پراکسی سیستم",
-        "useClashProxy": "استفاده از پراکسی Clash",
+        "useClashProxy": "استفاده از پراکسی Mihomo",
         "acceptInvalidCerts": "پذیرش گواهی‌نامه‌های نامعتبر (خطرناک)",
         "allowAutoUpdate": "Allow Auto Update"
       },
@@ -141,8 +141,8 @@
       },
       "feedback": {
         "notifications": {
-          "creationRetry": "Profile creation failed, retrying with Clash proxy...",
-          "creationSuccess": "Profile creation succeeded with Clash proxy"
+          "creationRetry": "Profile creation failed, retrying with Mihomo proxy...",
+          "creationSuccess": "Profile creation succeeded with Mihomo proxy"
         }
       }
     },

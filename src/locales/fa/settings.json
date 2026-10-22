@@ -6,7 +6,15 @@
       "github": "مخزن GitHub"
     },
     "actionsGroupLabel": "پیوندهای تنظیمات",
-    "title": "تنظیمات"
+    "title": "تنظیمات",
+    "about": {
+      "description": "A lightweight proxy client. Updating preserves your local subscriptions and settings.",
+      "downloads": "Get Luma",
+      "openSource": "Open source & acknowledgements",
+      "attribution": "Luma is an independently maintained derivative of Clash Verge Rev 2.5.8, powered by Mihomo and distributed under GPL-3.0. It does not represent the upstream projects. Original copyright and license notices are included.",
+      "source": "Luma source",
+      "notices": "Third-party notices"
+    }
   },
   "sections": {
     "system": {
@@ -97,7 +105,7 @@
       "system": "System"
     },
     "clash": {
-      "title": "تنظیمات Clash",
+      "title": "تنظیمات Mihomo",
       "form": {
         "fields": {
           "allowLan": "اجازه LAN",
@@ -108,7 +116,7 @@
           "portConfig": "پیکربندی پورت",
           "external": "خارجی",
           "webUI": "رابط وب",
-          "clashCore": "هسته Clash",
+          "clashCore": "هسته Mihomo",
           "openUwpTool": "باز کردن ابزار UWP",
           "updateGeoData": "به‌روزرسانی GeoData",
           "tunnels": {
@@ -157,7 +165,7 @@
   "components": {
     "verge": {
       "basic": {
-        "title": "تنظیمات پایه Verge",
+        "title": "تنظیمات پایه Luma",
         "actions": {
           "browse": "مرور کردن"
         },
@@ -180,7 +188,7 @@
         }
       },
       "advanced": {
-        "title": "تنظیمات پیشرفته Verge",
+        "title": "تنظیمات پیشرفته Luma",
         "tooltips": {
           "backupInfo": "از فایل های پیکربندی پشتیبان WebDAV پشتیبانی می کند",
           "openConfDir": "اگر نرم‌افزار به‌طور غیرعادی اجرا می‌شود، از تمام فایل‌های موجود در این پوشه نسخه پشتیبان تهیه و پاک کنید تا نرم‌افزار را مجدداً راه‌اندازی کنید",
@@ -204,7 +212,7 @@
           "liteModeSettings": "LightWeight Mode Settings",
           "exit": "خروج",
           "exportDiagnostics": "Export Diagnostic Info",
-          "vergeVersion": "نسخه Verge"
+          "vergeVersion": "نسخه Luma"
         }
       },
       "theme": {
@@ -680,7 +688,7 @@
     },
     "notifications": {
       "clash": {
-        "restartSuccess": "هسته Clash مجدداً راه‌اندازی شد",
+        "restartSuccess": "هسته Mihomo مجدداً راه‌اندازی شد",
         "versionUpdated": "نسخه هسته به‌روزرسانی شد",
         "alreadyLatestVersion": "در حال حاضر از آخرین نسخه هسته استفاده می‌کنید",
         "changeSuccess": "هسته با موفقیت تغییر کرد",

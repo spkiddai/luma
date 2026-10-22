@@ -24,7 +24,12 @@
       },
       "title": "ホーム設定"
     },
-    "title": "ホーム"
+    "title": "ホーム",
+    "hero": {
+      "eyebrow": "YOUR NETWORK, AT A GLANCE",
+      "title": "A little lighter. A little clearer.",
+      "description": "Your traffic, routes and connection settings in one place."
+    }
   },
   "components": {
     "proxyTun": {

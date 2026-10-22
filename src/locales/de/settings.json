@@ -6,7 +6,15 @@
       "github": "GitHub-Projektadresse"
     },
     "actionsGroupLabel": "Einstellungslinks",
-    "title": "Einstellungen"
+    "title": "Einstellungen",
+    "about": {
+      "description": "A lightweight proxy client. Updating preserves your local subscriptions and settings.",
+      "downloads": "Get Luma",
+      "openSource": "Open source & acknowledgements",
+      "attribution": "Luma is an independently maintained derivative of Clash Verge Rev 2.5.8, powered by Mihomo and distributed under GPL-3.0. It does not represent the upstream projects. Original copyright and license notices are included.",
+      "source": "Luma source",
+      "notices": "Third-party notices"
+    }
   },
   "sections": {
     "system": {
@@ -97,7 +105,7 @@
       "system": "System"
     },
     "clash": {
-      "title": "Clash-Einstellungen",
+      "title": "Mihomo-Einstellungen",
       "form": {
         "fields": {
           "allowLan": "Netzwerkverbindung im lokalen Netzwerk zulassen",
@@ -108,7 +116,7 @@
           "portConfig": "Port-Konfiguration",
           "external": "Externe Steuerung",
           "webUI": "Web-Oberfläche",
-          "clashCore": "Clash-Kern",
+          "clashCore": "Mihomo-Kern",
           "openUwpTool": "UWP-Tool öffnen",
           "updateGeoData": "Geo-Daten aktualisieren",
           "tunnels": {
@@ -157,7 +165,7 @@
   "components": {
     "verge": {
       "basic": {
-        "title": "Verge-Grundeinstellungen",
+        "title": "Luma-Grundeinstellungen",
         "actions": {
           "browse": "Durchsuchen"
         },
@@ -180,7 +188,7 @@
         }
       },
       "advanced": {
-        "title": "Verge-Erweiterte Einstellungen",
+        "title": "Luma-Erweiterte Einstellungen",
         "tooltips": {
           "backupInfo": "Unterstützt die Sicherung von Konfigurationsdateien über WebDAV",
           "openConfDir": "Wenn die Software fehlerhaft funktioniert, !sichern Sie! alle Dateien in diesem Verzeichnis, löschen Sie sie und starten Sie die Software neu.",
@@ -204,7 +212,7 @@
           "liteModeSettings": "Einstellungen für den Leichtgewichtigen Modus",
           "exit": "Beenden",
           "exportDiagnostics": "Diagnoseinformationen exportieren",
-          "vergeVersion": "Verge-Version"
+          "vergeVersion": "Luma-Version"
         }
       },
       "theme": {
@@ -670,17 +678,17 @@
         "coreAlreadyRunning": "Der Kern kann nicht gestartet werden: Ein Kernprozess läuft bereits. Beenden Sie die zugehörige App oder den verbliebenen Prozess und versuchen Sie es erneut. Wenn das Problem weiterhin besteht, starten Sie den Computer neu."
       },
       "sysproxy": {
-        "privilegeRequired": "Systemproxy kann nicht gesetzt werden: macOS hat die Änderung mangels Berechtigung abgelehnt. Installieren Sie den Clash-Verge-Dienst; als Administrator können Sie in den erweiterten Optionen unter Systemeinstellungen → Datenschutz & Sicherheit auch die Passwortpflicht für systemweite Einstellungen deaktivieren.",
+        "privilegeRequired": "Systemproxy kann nicht gesetzt werden: macOS hat die Änderung mangels Berechtigung abgelehnt. Installieren Sie den Luma-Dienst; als Administrator können Sie in den erweiterten Optionen unter Systemeinstellungen → Datenschutz & Sicherheit auch die Passwortpflicht für systemweite Einstellungen deaktivieren.",
         "directFallback": "Systemproxy konnte nicht gesetzt werden; der Datenverkehr wurde auf eine direkte Verbindung zurückgesetzt.",
         "guardStopped": "Der Systemproxy-Wächter wurde nach mehreren Fehlversuchen in Folge gestoppt. Der Systemproxy wird nicht mehr automatisch aufrechterhalten.",
-        "sidecarWhileServiceReady": "Der Systemproxy konnte nicht gesetzt werden: Der Clash-Verge-Dienst ist bereit, der Kern läuft aber noch als Sidecar. Starten Sie den Kern neu, um in den Dienstmodus zu wechseln.",
-        "coreNotReady": "Der Systemproxy konnte nicht aktiviert werden, da der Kern nicht läuft. Starten Sie den Kern (oder installieren/reparieren Sie den Clash-Verge-Dienst) und versuchen Sie es erneut.",
+        "sidecarWhileServiceReady": "Der Systemproxy konnte nicht gesetzt werden: Der Luma-Dienst ist bereit, der Kern läuft aber noch als Sidecar. Starten Sie den Kern neu, um in den Dienstmodus zu wechseln.",
+        "coreNotReady": "Der Systemproxy konnte nicht aktiviert werden, da der Kern nicht läuft. Starten Sie den Kern (oder installieren/reparieren Sie den Luma-Dienst) und versuchen Sie es erneut.",
         "systemCallFailed": "Der Systemproxy konnte nicht geschrieben werden, da ein Windows-Systemaufruf fehlschlug. Das ist meist vorübergehend, versuchen Sie es erneut."
       }
     },
     "notifications": {
       "clash": {
-        "restartSuccess": "Clash-Kern wurde neu gestartet",
+        "restartSuccess": "Mihomo-Kern wurde neu gestartet",
         "versionUpdated": "Kernversion wurde aktualisiert",
         "alreadyLatestVersion": "Bereits die neueste Kernversion in Verwendung",
         "changeSuccess": "Kern erfolgreich gewechselt",
@@ -698,8 +706,8 @@
         "uninstallSuccess": "Service erfolgreich deinstalliert"
       },
       "updater": {
-        "withClashProxySuccess": "Aktualisierung mit Clash-Proxy erfolgreich",
-        "withClashProxyFailed": "Aktualisierung auch mit Clash-Proxy fehlgeschlagen"
+        "withClashProxySuccess": "Aktualisierung mit Mihomo-Proxy erfolgreich",
+        "withClashProxyFailed": "Aktualisierung auch mit Mihomo-Proxy fehlgeschlagen"
       }
     }
   },

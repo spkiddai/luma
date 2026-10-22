@@ -67,17 +67,21 @@ const SettingPage = () => {
         <Grid size={6}>
           <Box
             sx={{
-              borderRadius: 2,
+              borderRadius: '16px',
+              border: '1px solid',
+              borderColor: 'divider',
               marginBottom: 1.5,
-              backgroundColor: isDark ? '#282a36' : '#ffffff',
+              backgroundColor: isDark ? '#202F28' : '#ffffff',
             }}
           >
             <SettingSystem onError={onError} />
           </Box>
           <Box
             sx={{
-              borderRadius: 2,
-              backgroundColor: isDark ? '#282a36' : '#ffffff',
+              borderRadius: '16px',
+              border: '1px solid',
+              borderColor: 'divider',
+              backgroundColor: isDark ? '#202F28' : '#ffffff',
             }}
           >
             <SettingClash onError={onError} />
@@ -86,17 +90,21 @@ const SettingPage = () => {
         <Grid size={6}>
           <Box
             sx={{
-              borderRadius: 2,
+              borderRadius: '16px',
+              border: '1px solid',
+              borderColor: 'divider',
               marginBottom: 1.5,
-              backgroundColor: isDark ? '#282a36' : '#ffffff',
+              backgroundColor: isDark ? '#202F28' : '#ffffff',
             }}
           >
             <SettingVergeBasic onError={onError} />
           </Box>
           <Box
             sx={{
-              borderRadius: 2,
-              backgroundColor: isDark ? '#282a36' : '#ffffff',
+              borderRadius: '16px',
+              border: '1px solid',
+              borderColor: 'divider',
+              backgroundColor: isDark ? '#202F28' : '#ffffff',
             }}
           >
             <SettingVergeAdvanced onError={onError} />

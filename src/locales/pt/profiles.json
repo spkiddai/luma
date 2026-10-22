@@ -40,8 +40,8 @@
         "updateFailed": "Falha ao atualizar o perfil"
       },
       "notifications": {
-        "importRetry": "Falha na importação, tentando novamente com o proxy Clash...",
-        "importFail": "Falha na importação mesmo com o proxy Clash",
+        "importRetry": "Falha na importação, tentando novamente com o proxy Mihomo...",
+        "importFail": "Falha na importação mesmo com o proxy Mihomo",
         "importNeedsRefresh": "Perfil importado, mas pode precisar de atualização manual",
         "importSuccess": "Perfil importado com sucesso, reinicie se não aparecer",
         "profileSwitched": "Perfil trocado",
@@ -122,7 +122,7 @@
         "httpTimeout": "Tempo limite HTTP",
         "updateInterval": "Intervalo de atualização",
         "useSystemProxy": "Usar proxy do sistema",
-        "useClashProxy": "Usar proxy Clash",
+        "useClashProxy": "Usar proxy Mihomo",
         "acceptInvalidCerts": "Permitir certificados inválidos (perigoso)",
         "allowAutoUpdate": "Permitir atualização automática"
       },
@@ -141,8 +141,8 @@
       },
       "feedback": {
         "notifications": {
-          "creationRetry": "Falha ao criar o perfil, tentando novamente com o proxy Clash...",
-          "creationSuccess": "Perfil criado com sucesso com o proxy Clash"
+          "creationRetry": "Falha ao criar o perfil, tentando novamente com o proxy Mihomo...",
+          "creationSuccess": "Perfil criado com sucesso com o proxy Mihomo"
         }
       }
     },

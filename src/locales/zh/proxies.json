@@ -84,7 +84,7 @@
       "directMode": "直连模式"
     },
     "title": {
-      "default": "代理组",
+      "default": "代理节点",
       "chainMode": "链式代理模式"
     }
   },

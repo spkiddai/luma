@@ -6,11 +6,19 @@
       "github": "GitHub 專案位址"
     },
     "actionsGroupLabel": "設定相關連結",
-    "title": "設定"
+    "title": "偏好設定",
+    "about": {
+      "description": "輕巧的網路代理用戶端。更新安裝套件會保留本機訂閱與設定。",
+      "downloads": "取得安裝套件",
+      "openSource": "開源與致謝",
+      "attribution": "Luma 是獨立維護的衍生專案，基於 Clash Verge Rev 2.5.8 開發，使用 Mihomo 核心，依 GPL-3.0 發布；不代表上游專案。原作者版權與授權條款隨安裝套件保留。",
+      "source": "Luma 原始碼",
+      "notices": "第三方聲明"
+    }
   },
   "sections": {
     "system": {
-      "title": "系統設定",
+      "title": "啟動與代理",
       "toggles": {
         "tunMode": "虛擬網路介面卡模式",
         "systemProxy": "系統代理"
@@ -97,7 +105,7 @@
       "system": "系統"
     },
     "clash": {
-      "title": "Clash 設定",
+      "title": "網路與核心",
       "form": {
         "fields": {
           "allowLan": "區域網路連線",
@@ -108,7 +116,7 @@
           "portConfig": "連接埠設定",
           "external": "外部控制",
           "webUI": "網頁介面",
-          "clashCore": "Clash 內核",
+          "clashCore": "Mihomo 核心",
           "openUwpTool": "UWP 工具",
           "updateGeoData": "更新 GeoData",
           "tunnels": {
@@ -157,7 +165,7 @@
   "components": {
     "verge": {
       "basic": {
-        "title": "Verge 基礎設定",
+        "title": "外觀與操作",
         "actions": {
           "browse": "瀏覽"
         },
@@ -180,7 +188,7 @@
         }
       },
       "advanced": {
-        "title": "Verge 進階設定",
+        "title": "資料與應用程式",
         "tooltips": {
           "backupInfo": "支援本機或 WebDAV 方式備份配置檔案",
           "openConfDir": "如果軟體執行異常，!備份!並刪除此資料夾下的所有檔案，重新啟動軟體",
@@ -199,12 +207,12 @@
           "openConfDir": "配置目錄",
           "openCoreDir": "內核目錄",
           "openLogsDir": "日誌目錄",
-          "checkUpdates": "檢查更新",
+          "checkUpdates": "關於 Luma",
           "openDevTools": "開發人員工具",
           "liteModeSettings": "輕量模式設定",
           "exit": "離開",
           "exportDiagnostics": "匯出診斷資訊",
-          "vergeVersion": "Verge 版本"
+          "vergeVersion": "Luma 版本"
         }
       },
       "theme": {
@@ -680,7 +688,7 @@
     },
     "notifications": {
       "clash": {
-        "restartSuccess": "已重啟 Clash 內核",
+        "restartSuccess": "已重啟 Mihomo 內核",
         "versionUpdated": "內核版本已更新",
         "alreadyLatestVersion": "已經是最新內核版本",
         "changeSuccess": "內核切換成功",
@@ -698,8 +706,8 @@
         "uninstallSuccess": "已成功解除安裝服務"
       },
       "updater": {
-        "withClashProxySuccess": "使用 Clash 代理更新成功",
-        "withClashProxyFailed": "使用 Clash 代理更新也失敗"
+        "withClashProxySuccess": "使用 Mihomo 代理更新成功",
+        "withClashProxyFailed": "使用 Mihomo 代理更新也失敗"
       }
     }
   },

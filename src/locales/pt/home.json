@@ -19,12 +19,17 @@
         "traffic": "Cartão de estatísticas de tráfego",
         "tests": "Cartão de testes de sites",
         "ip": "Cartão de informações de IP",
-        "clashInfo": "Cartões de informações do Clash",
+        "clashInfo": "Cartões de informações do Mihomo",
         "systemInfo": "Cartões de informações do sistema"
       },
       "title": "Configurações do início"
     },
-    "title": "Início"
+    "title": "Início",
+    "hero": {
+      "eyebrow": "YOUR NETWORK, AT A GLANCE",
+      "title": "A little lighter. A little clearer.",
+      "description": "Your traffic, routes and connection settings in one place."
+    }
   },
   "components": {
     "proxyTun": {
@@ -41,7 +46,7 @@
       }
     },
     "clashInfo": {
-      "title": "Informações do Clash",
+      "title": "Informações do Mihomo",
       "fields": {
         "coreVersion": "Versão do núcleo",
         "systemProxyAddress": "Endereço do proxy do sistema",
@@ -57,7 +62,7 @@
         "autoLaunch": "Início automático",
         "runningMode": "Modo de execução",
         "lastCheckUpdate": "Última verificação de atualização",
-        "vergeVersion": "Versão do Verge"
+        "vergeVersion": "Versão do Luma"
       },
       "actions": {
         "settings": "Configurações"

@@ -19,12 +19,17 @@
         "traffic": "Verkehrsstatistik-Karte",
         "tests": "Website-Tests-Karte",
         "ip": "IP-Informationen-Karte",
-        "clashInfo": "Clash-Informationen-Karten",
+        "clashInfo": "Mihomo-Informationen-Karten",
         "systemInfo": "Systeminformationen-Karten"
       },
       "title": "Startseite-Einstellungen"
     },
-    "title": "Startseite"
+    "title": "Startseite",
+    "hero": {
+      "eyebrow": "YOUR NETWORK, AT A GLANCE",
+      "title": "A little lighter. A little clearer.",
+      "description": "Your traffic, routes and connection settings in one place."
+    }
   },
   "components": {
     "proxyTun": {
@@ -41,7 +46,7 @@
       }
     },
     "clashInfo": {
-      "title": "Clash-Informationen",
+      "title": "Mihomo-Informationen",
       "fields": {
         "coreVersion": "Kernversion",
         "systemProxyAddress": "Systemproxy-Adresse",
@@ -57,7 +62,7 @@
         "autoLaunch": "Beim Start automatisch starten",
         "runningMode": "Betriebsmodus",
         "lastCheckUpdate": "Letzte Aktualitätsprüfung",
-        "vergeVersion": "Verge-Version"
+        "vergeVersion": "Luma-Version"
       },
       "actions": {
         "settings": "Einstellungen"

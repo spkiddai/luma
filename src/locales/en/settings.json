@@ -6,11 +6,19 @@
       "github": "Github Repo"
     },
     "actionsGroupLabel": "Settings links",
-    "title": "Settings"
+    "title": "Preferences",
+    "about": {
+      "description": "A lightweight proxy client. Updating preserves your local subscriptions and settings.",
+      "downloads": "Get Luma",
+      "openSource": "Open source & acknowledgements",
+      "attribution": "Luma is an independently maintained derivative of Clash Verge Rev 2.5.8, powered by Mihomo and distributed under GPL-3.0. It does not represent the upstream projects. Original copyright and license notices are included.",
+      "source": "Luma source",
+      "notices": "Third-party notices"
+    }
   },
   "sections": {
     "system": {
-      "title": "System Setting",
+      "title": "Startup & proxy",
       "toggles": {
         "tunMode": "Tun Mode",
         "systemProxy": "System Proxy"
@@ -97,7 +105,7 @@
       "system": "System"
     },
     "clash": {
-      "title": "Clash Setting",
+      "title": "Network & core",
       "form": {
         "fields": {
           "allowLan": "Allow LAN",
@@ -108,7 +116,7 @@
           "portConfig": "Port Config",
           "external": "External",
           "webUI": "Web UI",
-          "clashCore": "Clash Core",
+          "clashCore": "Mihomo core",
           "openUwpTool": "Open UWP tool",
           "updateGeoData": "Update GeoData",
           "tunnels": {
@@ -157,7 +165,7 @@
   "components": {
     "verge": {
       "basic": {
-        "title": "Verge Basic Setting",
+        "title": "Appearance & interaction",
         "actions": {
           "browse": "Browse"
         },
@@ -180,7 +188,7 @@
         }
       },
       "advanced": {
-        "title": "Verge Advanced Setting",
+        "title": "Data & application",
         "tooltips": {
           "backupInfo": "Support local or WebDAV backup of configuration files",
           "openConfDir": "If the software runs abnormally, BACKUP and delete all files in this folder then restart the software",
@@ -199,12 +207,12 @@
           "openConfDir": "Open Conf Dir",
           "openCoreDir": "Open Core Dir",
           "openLogsDir": "Open Logs Dir",
-          "checkUpdates": "Check for Updates",
+          "checkUpdates": "About Luma",
           "openDevTools": "Dev Tools",
           "liteModeSettings": "LightWeight Mode Settings",
           "exit": "Exit",
           "exportDiagnostics": "Export Diagnostic Info",
-          "vergeVersion": "Verge Version"
+          "vergeVersion": "Luma Version"
         }
       },
       "theme": {
@@ -680,7 +688,7 @@
     },
     "notifications": {
       "clash": {
-        "restartSuccess": "Clash Core Restarted",
+        "restartSuccess": "Mihomo Core Restarted",
         "versionUpdated": "Core Version Updated",
         "alreadyLatestVersion": "Already Using Latest Core Version",
         "changeSuccess": "Core changed successfully",
@@ -698,8 +706,8 @@
         "uninstallSuccess": "Service Uninstalled Successfully"
       },
       "updater": {
-        "withClashProxySuccess": "Update with Clash proxy successfully",
-        "withClashProxyFailed": "Update failed even with Clash proxy"
+        "withClashProxySuccess": "Update with Mihomo proxy successfully",
+        "withClashProxyFailed": "Update failed even with Mihomo proxy"
       }
     }
   },

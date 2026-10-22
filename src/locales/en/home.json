@@ -19,18 +19,23 @@
         "traffic": "Traffic Stats Card",
         "tests": "Website Tests Card",
         "ip": "IP Information Card",
-        "clashInfo": "Clash Info Cards",
+        "clashInfo": "Core status",
         "systemInfo": "System Info Cards"
       },
       "title": "Home Settings"
     },
-    "title": "Home"
+    "title": "Overview",
+    "hero": {
+      "eyebrow": "YOUR NETWORK, AT A GLANCE",
+      "title": "A little lighter. A little clearer.",
+      "description": "Your traffic, routes and connection settings in one place."
+    }
   },
   "components": {
     "proxyTun": {
       "status": {
         "systemProxyEnabled": "System Proxy Enabled",
-        "systemProxyDisabled": "System Proxy Disabled",
+        "systemProxyDisabled": "System proxy is off. You can set the proxy address in your browser or other apps.",
         "tunModeServiceRequired": "TUN Mode Service Required",
         "tunModeEnabled": "TUN Mode Enabled",
         "tunModeDisabled": "TUN Mode Disabled"
@@ -41,7 +46,7 @@
       }
     },
     "clashInfo": {
-      "title": "Clash Info",
+      "title": "Core status",
       "fields": {
         "coreVersion": "Core Version",
         "systemProxyAddress": "System Proxy Address",
@@ -57,7 +62,7 @@
         "autoLaunch": "Auto Launch",
         "runningMode": "Running Mode",
         "lastCheckUpdate": "Last Check Update",
-        "vergeVersion": "Verge Version"
+        "vergeVersion": "Luma Version"
       },
       "actions": {
         "settings": "Settings"
@@ -149,7 +154,7 @@
       "descriptions": {
         "rule": "Automatically choose proxies according to the rule set.",
         "global": "Forward all network requests through the selected proxy.",
-        "direct": "Bypass the proxy and connect to the internet directly."
+        "direct": "Connect directly to destinations without a remote proxy node."
       }
     }
   }
