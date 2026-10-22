@@ -10,7 +10,7 @@
       "frameworks": [],
       "minimumSystemVersion": "11.0",
       "exceptionDomain": "",
-      "signingIdentity": null,
+      "signingIdentity": "-",
       "entitlements": "packages/macos/entitlements.plist",
       "infoPlist": "packages/macos/info_merge.plist"
     }

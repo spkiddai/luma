@@ -65,6 +65,9 @@ jobs:
         run: cargo test -p luma --lib --features clippy --locked
       - name: Build native application
         run: pnpm exec tauri build --target ${{ matrix.target }} -- --locked
+      - name: Verify macOS bundle seal
+        if: matrix.platform == 'mac'
+        run: codesign --verify --deep --strict "target/${{ matrix.target }}/release/bundle/macos/Luma.app"
       - name: Native app lifecycle regression
         if: matrix.platform == 'mac'
         run: python3 build/luma/native-smoke.py "target/${{ matrix.target }}/release/bundle/macos/Luma.app"
