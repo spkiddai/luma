@@ -47,7 +47,7 @@ jobs:
           components: rustfmt
       - uses: Swatinem/rust-cache@v2
         with:
-          key: ${{ matrix.target }}-luma-0.3
+          key: ${{ matrix.target }}-luma-0.3-native
           cache-on-failure: true
       - run: pnpm install --frozen-lockfile
       - run: node build/luma/prepare.mjs
@@ -94,3 +94,22 @@ jobs:
             release/**/*.sha256
           if-no-files-found: error
           retention-days: 14
+  format-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: '1.99.0'
+          components: rustfmt
+      - name: Produce formatting review
+        run: |
+          cargo fmt --all
+          mkdir -p artifacts
+          git diff --binary > artifacts/rust-format.patch
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Rust-format-review
+          path: artifacts/rust-format.patch
+          retention-days: 7
