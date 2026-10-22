@@ -60,7 +60,7 @@ it.each([
     expect(html).toContain('Close the related app or stop the leftover process')
     expect(html).toContain(detail)
     if (operation === 'sidecar') {
-      expect(html).toContain('service-core-permissions')
+      expect(html).toContain('https://proxy.spkiddai.top/#core-connection')
       expect(html).toContain('PID 123')
     }
   },

@@ -7,7 +7,7 @@ if (!isMobile && /Windows/i.test(userAgent)) {
 
 // Keep the installation note discoverable when opened from a direct link.
 function revealAnchor() {
-  if (location.hash === '#install-note') document.getElementById('install-note').open = true;
+  if (['#install-note', '#core-connection'].includes(location.hash)) document.querySelector(location.hash).open = true;
 }
 window.addEventListener('hashchange', revealAnchor);
 revealAnchor();

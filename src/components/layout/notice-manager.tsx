@@ -24,7 +24,7 @@ import { openExternalUrl } from '@/utils/open-external-url'
 const SERVICE_PERMISSION_NOTICE =
   'settings.feedback.notifications.clashService.permissionFallback'
 const SERVICE_PERMISSION_GUIDE =
-  'https://proxy.spkiddai.top/#guide'
+  'https://proxy.spkiddai.top/#core-connection'
 const SERVICE_OWNER_NOTICE =
   'settings.feedback.notifications.clashService.appDataNotOwned'
 
