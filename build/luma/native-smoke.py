@@ -60,6 +60,28 @@ def core_processes():
     result = subprocess.run(['pgrep','-x','luma-mihomo'],capture_output=True,text=True)
     return result.stdout.split()
 
+def capture_window(pid):
+    # Capture only this synthetic app window, excluding unrelated runner dialogs.
+    source = output/'window-id.swift'
+    source.write_text('''import CoreGraphics
+let pid = Int(CommandLine.arguments[1])!
+let windows = CGWindowListCopyWindowInfo([.optionOnScreenOnly, .excludeDesktopElements], kCGNullWindowID) as? [[String: Any]] ?? []
+for window in windows {
+    guard window[kCGWindowOwnerPID as String] as? Int == pid,
+          let bounds = window[kCGWindowBounds as String] as? [String: Any],
+          (bounds["Width"] as? Double ?? 0) > 400,
+          let id = window[kCGWindowNumber as String] as? Int else { continue }
+    print(id)
+    break
+}
+''')
+    result = subprocess.run(['swift',str(source),str(pid)],capture_output=True,text=True,timeout=60)
+    window_id = result.stdout.strip()
+    if result.returncode == 0 and window_id.isdigit():
+        subprocess.run(['screencapture','-x','-o','-l',window_id,str(output/'window.png')],check=False)
+    else:
+        subprocess.run(['screencapture','-x',str(output/'window.png')],check=False)
+
 legacy.joinpath('profiles').mkdir(parents=True, mode=0o700)
 legacy.joinpath('settings.json').write_text(json.dumps({'version':3,'port':proxy_port,'mode':'rule','allowLan':False,'autoStart':True,'selectedProfile':'fixture','profiles':[{'id':'fixture','name':'CI fixture','kind':'local'}]}))
 legacy.joinpath('profiles/fixture.yaml').write_text(json.dumps({'hosts':{'origin.luma.test':'127.0.0.1'}, 'proxies':[], 'proxy-groups':[{'name':'Fixture','type':'select','proxies':['DIRECT','REJECT']}], 'rules':['MATCH,Fixture']}))
@@ -92,7 +114,7 @@ try:
                 if iteration == 1:
                     # Forwarding becomes ready before the webview finishes rendering.
                     time.sleep(10)
-                    subprocess.run(['screencapture','-x',str(output/'window.png')],check=False)
+                    capture_window(process.pid)
                 print(json.dumps({'iteration':iteration,'core_count':len(core_processes()),'switches':10,'reloads':5,'migration':'preserved','system_proxy':'off'}),flush=True)
             finally:
                 process.terminate()
