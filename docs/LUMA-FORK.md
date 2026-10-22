@@ -30,6 +30,12 @@ it does not establish an external network speed improvement.
 
 ## Validation
 
+Luma 0.3.0 binaries were built from `8680cbd2e0f80c1cc79986553730bd6614fa9161`.
+[The release workflow](https://github.com/spkiddai/luma/actions/runs/39719008538)
+passed for Apple Silicon, Intel Mac and Windows x64. Each ran 45 frontend tests;
+macOS ran 380 Rust tests and Windows ran 359. Both macOS bundles passed integrity
+verification and the packaged-app lifecycle regression described below.
+
 The desktop workflow is the authoritative build result for each commit. It runs:
 
 1. Upstream frontend type checks and tests.
