@@ -255,9 +255,6 @@ mod fake {
 
     impl RunStateEnv for FakeEnv {
         async fn probe_service_version(&self) -> Result<ServiceVersionReply> {
-        if !crate::product::SERVICE_SUPPORTED {
-            anyhow::bail!("Luma uses an unprivileged bundled core");
-        }
             *self.probe_count.lock() += 1;
             let mut replies = self.version_replies.lock();
             let reply = if replies.len() > 1 {
@@ -272,7 +269,6 @@ mod fake {
         }
 
         async fn trusted_install_evidence(&self) -> Result<bool> {
-        if !crate::product::SERVICE_SUPPORTED { return Ok(false); }
             self.evidence.clone().map_err(|error| anyhow!(error))
         }
 
@@ -289,9 +285,6 @@ mod fake {
         }
 
         fn run_privileged(&self, action: PendingAction) -> Result<()> {
-        if !crate::product::SERVICE_SUPPORTED {
-            anyhow::bail!("Privileged service installation is not supported in Luma");
-        }
             self.privileged_actions.lock().push(action);
             self.privileged_outcome.lock().clone().map_err(|error| anyhow!(error))
         }

@@ -12,7 +12,7 @@ pub struct ChannelIdentity {
 pub const CHANNEL_IDENTITY: ChannelIdentity = ChannelIdentity {
     id: "production",
     service_slug: "luma-core-service",
-    windows_service_name: "clash_verge_service",
+    windows_service_name: "luma_core_service",
     service_display_name: "Luma Service",
     macos_app_bundle_id: "io.github.spkiddai.luma",
     macos_service_id: "io.github.spkiddai.luma.service",
@@ -22,7 +22,7 @@ pub const CHANNEL_IDENTITY: ChannelIdentity = ChannelIdentity {
 pub const CHANNEL_IDENTITY: ChannelIdentity = ChannelIdentity {
     id: "development",
     service_slug: "luma-core-service-dev",
-    windows_service_name: "clash_verge_service_dev",
+    windows_service_name: "luma_core_service_dev",
     service_display_name: "Luma Development Service",
     macos_app_bundle_id: "io.github.spkiddai.luma.dev",
     macos_service_id: "io.github.spkiddai.luma.dev.service",
@@ -42,7 +42,7 @@ mod tests {
     fn compiled_channel_has_a_self_consistent_identity() {
         assert!(!CHANNEL_IDENTITY.id.is_empty());
         assert!(CHANNEL_IDENTITY.service_slug.starts_with("luma-core-service"));
-        assert!(CHANNEL_IDENTITY.windows_service_name.starts_with("clash_verge_service"));
+        assert!(CHANNEL_IDENTITY.windows_service_name.starts_with("luma_core_service"));
         assert!(
             CHANNEL_IDENTITY
                 .macos_service_id
