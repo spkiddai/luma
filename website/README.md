@@ -13,11 +13,11 @@ python3 -m http.server 5187 --bind 127.0.0.1 --directory website
 
 ## Release files
 
-Place verified release artifacts in `website/downloads/0.2.0/`:
+Place verified release artifacts in `website/downloads/0.3.0/`:
 
-- `Luma-0.2.0-arm64.pkg`
-- `Luma-0.2.0-x64.pkg`
-- `Luma-0.2.0-win-x64.exe`
+- `Luma-0.3.0-arm64.pkg`
+- `Luma-0.3.0-x64.pkg`
+- `Luma-0.3.0-win-x64.exe`
 - A matching `<filename>.sha256` text file for each package.
 - `SHA256SUMS.txt` containing the three SHA-256 digests and filenames.
 - `manifest.json`, with `version`, `coreVersion`, `sourceCommit` and a `files`

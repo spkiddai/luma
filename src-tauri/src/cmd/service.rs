@@ -19,6 +19,12 @@ pub enum ServiceInstallOutcome {
 }
 
 async fn execute_service_operation_sync(status: ServiceStatus, error_code: &str) -> CmdResult<ServiceInstallOutcome> {
+    if !crate::product::SERVICE_SUPPORTED {
+        return Err(proxy_aware_coded_error(
+            &anyhow::anyhow!("Luma uses a bundled unprivileged core"),
+            error_code,
+        ));
+    }
     let manager = CoreManager::global();
     let result = {
         let _lifecycle = manager.lifecycle_lock.lock().await;
@@ -88,6 +94,12 @@ pub async fn install_service() -> CmdResult<ServiceInstallOutcome> {
 
 #[tauri::command]
 pub async fn uninstall_service() -> CmdResult {
+    if !crate::product::SERVICE_SUPPORTED {
+        return Err(proxy_aware_coded_error(
+            &anyhow::anyhow!("Luma has no privileged service"),
+            "SERVICE_UNSUPPORTED",
+        ));
+    }
     CoreManager::global()
         .uninstall_service_and_start_sidecar()
         .await

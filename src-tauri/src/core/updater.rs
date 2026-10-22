@@ -330,7 +330,9 @@ impl SilentUpdater {
 
     /// Installs a newer cached update before normal startup, if the user confirms.
     pub async fn try_install_on_startup(&self, app_handle: &tauri::AppHandle) -> bool {
-        if !crate::product::IN_APP_UPDATE_SUPPORTED { return false; }
+        if !crate::product::IN_APP_UPDATE_SUPPORTED {
+            return false;
+        }
         if !Config::verge().await.latest_arc().auto_check_update.unwrap_or(true) {
             Self::delete_cache();
             return false;
@@ -432,7 +434,9 @@ impl SilentUpdater {
         version: &str,
         on_event: impl Fn(DownloadEvent) + Sync,
     ) -> Result<bool> {
-        if !crate::product::IN_APP_UPDATE_SUPPORTED { anyhow::bail!("Download Luma updates from https://proxy.spkiddai.top/"); }
+        if !crate::product::IN_APP_UPDATE_SUPPORTED {
+            anyhow::bail!("Download Luma updates from https://proxy.spkiddai.top/");
+        }
         let cancel = CancellationToken::new();
         *self.manual_cancel.lock() = Some(cancel.clone());
         let prepared = tokio::select! {
@@ -683,7 +687,9 @@ impl SilentUpdater {
     }
 
     pub async fn start_background_check(&self, app_handle: tauri::AppHandle) {
-        if !crate::product::IN_APP_UPDATE_SUPPORTED { return; }
+        if !crate::product::IN_APP_UPDATE_SUPPORTED {
+            return;
+        }
         // Permanent watcher: daily update cycles for the lifetime of the app.
         logging!(info, Type::System, "Silent updater: background task started");
 

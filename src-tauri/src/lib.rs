@@ -7,9 +7,9 @@ mod constants;
 mod core;
 mod enhance;
 mod feat;
+mod legacy_migration;
 mod process;
 mod product;
-mod legacy_migration;
 pub mod utils;
 
 use crate::constants::files;

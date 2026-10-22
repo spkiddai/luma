@@ -605,10 +605,8 @@ mod production_gate_tests {
         // Use a real root-owned path to exercise the production metadata check.
         assert!(require_trusted_core_location(Path::new("/Applications/Utilities")).is_ok());
         assert!(
-            require_trusted_core_location(Path::new(
-                "/Applications/does-not-exist.app/Contents/MacOS/luma-mihomo"
-            ))
-            .is_err()
+            require_trusted_core_location(Path::new("/Applications/does-not-exist.app/Contents/MacOS/luma-mihomo"))
+                .is_err()
         );
     }
 }

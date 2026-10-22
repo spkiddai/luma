@@ -29,7 +29,16 @@ await copyFile(`resources/core/${os}-${process.arch}/version.json`, 'src-tauri/r
 await copyFile('resources/geodata/manifest.json', 'src-tauri/resources/geodata-manifest.json');
 if (process.platform === 'win32') run('cmd.exe', ['/d', '/s', '/c', 'pnpm exec tauri icon resources/icon.png --output src-tauri/icons']);
 else run('pnpm', ['exec', 'tauri', 'icon', 'resources/icon.png', '--output', 'src-tauri/icons']);
+// Wrap the existing transparent tray PNG without rasterizing or changing its pixels.
+const tray = await readFile('resources/tray@2x.png');
+const width = tray.readUInt32BE(16), height = tray.readUInt32BE(20);
+if (width > 256 || height > 256) throw new Error('Tray PNG is too large for ICO');
+const header = Buffer.alloc(22);
+header.writeUInt16LE(1, 2); header.writeUInt16LE(1, 4);
+header[6] = width % 256; header[7] = height % 256;
+header.writeUInt16LE(1, 10); header.writeUInt16LE(32, 12);
+header.writeUInt32LE(tray.length, 14); header.writeUInt32LE(22, 18);
 for (const name of ['tray-icon.ico','tray-icon-sys.ico','tray-icon-tun.ico','tray-icon-mono.ico','tray-icon-sys-mono-new.ico','tray-icon-tun-mono-new.ico']) {
-  await copyFile('src-tauri/icons/icon.ico', path.join('src-tauri/icons', name));
+  await writeFile(path.join('src-tauri/icons', name), Buffer.concat([header, tray]));
 }
 console.log(`Prepared bundled core, geodata, licenses and icons for ${triple}`);

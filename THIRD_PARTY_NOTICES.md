@@ -1,6 +1,6 @@
 # Third-party notices
 
-Luma is an independent desktop client. It is not an official Clash Verge or MetaCubeX product. No Clash Verge application source, branding or artwork is included.
+Luma is an independent fork of Clash Verge Rev, powered by Mihomo. It is not an official Clash Verge or MetaCubeX product. Upstream source and notices are retained; the application uses Luma's own name and icons.
 
 ## mihomo
 

@@ -1053,7 +1053,6 @@ async fn create_tray_menu(
     menu_items.extend_from_slice(&[
         separator,
         system_proxy as &dyn IsMenuItem<Wry>,
-
         separator,
         lightweight_mode as &dyn IsMenuItem<Wry>,
         open_dir as &dyn IsMenuItem<Wry>,

@@ -73,7 +73,9 @@ impl RunStateEnv for RealEnv {
     }
 
     async fn trusted_install_evidence(&self) -> Result<bool> {
-        if !crate::product::SERVICE_SUPPORTED { return Ok(false); }
+        if !crate::product::SERVICE_SUPPORTED {
+            return Ok(false);
+        }
         let registered = tokio::task::spawn_blocking(crate::core::service::trusted_service_evidence)
             .await
             .context("service registration probe did not finish")??;

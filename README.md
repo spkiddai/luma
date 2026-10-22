@@ -2,7 +2,7 @@
 
 Luma 0.3 is a desktop proxy client **based directly on [Clash Verge Rev 2.5.8](https://github.com/clash-verge-rev/clash-verge-rev/tree/v2.5.8)** (commit `4337bd85758d54d7b9044b2da3c9ac1176eae1f3`). The original authors retain their copyright. Luma modifications and the upstream code are distributed under GPL-3.0-only.
 
-This version replaces the previous Electron implementation with the upstream Tauri/Rust app, React interface, configuration pipeline, core lifecycle and proxy group management. Traffic is forwarded directly by the bundled Mihomo process, not through JavaScript or the webview. Upstream architecture alone cannot fix overloaded nodes or poor external routes; sustained-transfer measurements are required before making performance claims.
+This version replaces the previous Electron implementation with the upstream Tauri/Rust app, React interface, configuration pipeline, core lifecycle and proxy group management. Traffic is forwarded directly by the bundled Mihomo process, not through JavaScript or the webview. Validation focuses on reliable startup, configuration changes, forwarding during reloads, and clean exit/restart. Passing these checks does not establish that every intermittent browsing failure has been eliminated.
 
 ## Desktop behavior
 
@@ -11,7 +11,7 @@ This version replaces the previous Electron implementation with the upstream Tau
 - Desktop TUN and application-specific proxy controls are absent. The core runs without a privileged system service.
 - System proxy is off on first start and on migration. Enable it yourself or configure a browser to use the displayed HTTP/SOCKS port.
 - Separate `io.github.spkiddai.luma` data directory and `luma-mihomo` IPC/process namespace. The fork does not manage Clash Verge's service or updater.
-- First start copies profiles from the former `Luma` or `Mihomo Desk` data directory. It preserves the originals, selection, mixed port, rule mode and LAN preference. User data is never included in builds.
+- First start copies profiles from the former `Luma` or `Mihomo Desk` data directory. It preserves the originals, profile selection, stable core cache, mixed port, rule mode and LAN preference. User data is never included in builds.
 - Mac PKG installs into `/Applications/Luma.app`; Windows uses a standard per-user NSIS installer with the offline WebView2 runtime.
 - Updates are obtained from the [Luma download site](https://proxy.spkiddai.top/). Upstream automatic updates are disabled.
 

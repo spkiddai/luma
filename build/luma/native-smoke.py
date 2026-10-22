@@ -45,7 +45,7 @@ class UnixHTTP(http.client.HTTPConnection):
 def api(method, path, body=None):
     conn = UnixHTTP('localhost', timeout=5)
     try:
-        conn.request(method, path, json.dumps(body) if body is not None else None, {'Content-Type':'application/json'})
+        conn.request(method, path, json.dumps(body) if body is not None else None, {'Content-Type':'application/json', 'Authorization':'Bearer set-your-secret'})
         response = conn.getresponse(); data = response.read()
         assert response.status in (200, 204), (response.status, data)
         return json.loads(data) if data else None
@@ -90,12 +90,15 @@ try:
                 for key in ['HTTPEnable','HTTPSEnable','SOCKSEnable','ProxyAutoConfigEnable']:
                     assert f'{key} : 1' not in flags, 'System proxy must remain disabled'
                 if iteration == 1:
+                    # Forwarding becomes ready before the webview finishes rendering.
+                    time.sleep(10)
                     subprocess.run(['screencapture','-x',str(output/'window.png')],check=False)
                 print(json.dumps({'iteration':iteration,'core_count':len(core_processes()),'switches':10,'reloads':5,'migration':'preserved','system_proxy':'off'}),flush=True)
             finally:
                 process.terminate()
                 try: process.wait(timeout=20)
                 except subprocess.TimeoutExpired: process.kill(); process.wait(); raise AssertionError('App did not quit cleanly')
+                assert process.returncode == 0, f'Application cleanup failed: exit {process.returncode}'
                 for _ in range(100):
                     if not core_processes(): break
                     time.sleep(0.1)

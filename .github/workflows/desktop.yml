@@ -3,13 +3,14 @@ on:
   push:
     branches: [main, codex/luma-verge-rebuild]
     tags: ['v*']
+    paths-ignore: ['website/**', 'docs/**', '**/*.md']
   pull_request:
   workflow_dispatch:
 permissions:
   contents: read
 concurrency:
   group: desktop-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 jobs:
   desktop:
     strategy:
@@ -103,13 +104,5 @@ jobs:
         with:
           toolchain: '1.99.0'
           components: rustfmt
-      - name: Produce formatting review
-        run: |
-          cargo fmt --all
-          mkdir -p artifacts
-          git diff --binary > artifacts/rust-format.patch
-      - uses: actions/upload-artifact@v4
-        with:
-          name: Rust-format-review
-          path: artifacts/rust-format.patch
-          retention-days: 7
+      - name: Check Rust formatting
+        run: cargo fmt --all -- --check

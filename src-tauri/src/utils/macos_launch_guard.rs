@@ -515,8 +515,7 @@ mod tests {
 
     #[test]
     fn translocation_and_missing_bundle_are_rejected_before_side_effects() {
-        let translocated =
-            std::path::Path::new("/private/var/folders/AppTranslocation/Luma.app/Contents/MacOS/luma");
+        let translocated = std::path::Path::new("/private/var/folders/AppTranslocation/Luma.app/Contents/MacOS/luma");
         assert_eq!(
             evaluate_install_location_with_roots(
                 translocated,

@@ -58,6 +58,9 @@ pub async fn sync_public_dns() {
         core::{CoreManager, handle::Handle, manager::RunningMode},
     };
 
+    if !crate::product::TUN_SUPPORTED {
+        return;
+    }
     let _guard = DNS_LOCK.lock().await;
     // Exit cleanup restores DNS on its own budget; a sync queued behind it must not undo that.
     if Handle::global().is_exiting() {
@@ -73,6 +76,10 @@ pub async fn sync_public_dns() {
 }
 
 pub async fn restore_public_dns() -> anyhow::Result<()> {
+    // This product has never changed system DNS: desktop TUN is unavailable.
+    if !crate::product::TUN_SUPPORTED {
+        return Ok(());
+    }
     let _guard = DNS_LOCK.lock().await;
     unset_public_dns().await
 }

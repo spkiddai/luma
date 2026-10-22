@@ -597,10 +597,7 @@ mod tests {
             "luma-core-service-dev"
         };
         let current = crate::SERVICE_SLUG;
-        require_no_unix_core_processes(
-            &format!("luma-core-servi /var/lib/{other}/bin/luma-core-service"),
-            true,
-        )?;
+        require_no_unix_core_processes(&format!("luma-core-servi /var/lib/{other}/bin/luma-core-service"), true)?;
         assert!(
             require_no_unix_core_processes(
                 &format!("luma-core-servi /var/lib/{current}/bin/luma-core-service"),
@@ -663,7 +660,8 @@ mod tests {
     #[cfg(all(target_os = "macos", feature = "client"))]
     #[test]
     fn an_idle_helper_from_the_other_channel_does_not_block_fallback() -> Result<()> {
-        let production = "/Library/PrivilegedHelperTools/io.github.spkiddai.luma.service.bundle/Contents/MacOS/luma-core-service";
+        let production =
+            "/Library/PrivilegedHelperTools/io.github.spkiddai.luma.service.bundle/Contents/MacOS/luma-core-service";
         let development = "/Library/PrivilegedHelperTools/io.github.spkiddai.luma.dev.service.bundle/Contents/MacOS/luma-core-service";
         let (current, other) = if cfg!(feature = "development-channel") {
             (development, production)

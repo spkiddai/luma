@@ -268,10 +268,7 @@ mod tests {
     fn unix_mihomo_ipc_path_is_owner_scoped_and_below_sun_path_limit() {
         let path = unix_mihomo_ipc_path(Path::new("/var/run/luma-core-service"), 501);
 
-        assert_eq!(
-            path,
-            Path::new("/var/run/luma-core-service/users/501/luma-mihomo.sock")
-        );
+        assert_eq!(path, Path::new("/var/run/luma-core-service/users/501/luma-mihomo.sock"));
         assert!(path.as_os_str().as_encoded_bytes().len() < 104);
     }
 
