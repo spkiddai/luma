@@ -230,7 +230,7 @@ export const useCustomTheme = () => {
       )
       rootEle.style.setProperty(
         '--scrollbar-bg',
-        mode === 'light' ? '#f1f1f1' : '#2E303D',
+        mode === 'light' ? '#f1f1f1' : '#17231F',
       )
       rootEle.style.setProperty(
         '--scrollbar-thumb',
