@@ -5,7 +5,7 @@ export const ProfileBox = styled(Box)(
     const { mode, primary, text } = theme.palette
     const key = `${mode}-${!!selected}`
 
-    const backgroundColor = mode === 'light' ? '#ffffff' : '#202F28'
+    const backgroundColor = mode === 'light' ? '#ffffff' : '#2A2D32'
 
     const color = {
       'light-true': text.secondary,

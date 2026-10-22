@@ -40,10 +40,10 @@ export const LayoutItem = (props: Props) => {
         aria-current={match ? 'page' : undefined}
         sx={{
           borderRadius: '10px', mx: 1.5, px: 1.5, minHeight: 42,
-          color: '#b7c8bf',
-          '&:hover': { bgcolor: '#263f35', color: '#f0f7ef' },
+          color: 'var(--nav-text)',
+          '&:hover': { bgcolor: 'var(--nav-hover)', color: 'var(--nav-strong)' },
           '&.Mui-selected, &.Mui-selected:hover': {
-            bgcolor: '#d8edc8', color: '#18392b',
+            bgcolor: 'var(--nav-active-bg)', color: 'var(--nav-active-text)',
           },
           '& .MuiListItemText-primary': { fontSize: 13, fontWeight: match ? 650 : 500 },
           '& .MuiListItemIcon-root': { color: 'inherit' },

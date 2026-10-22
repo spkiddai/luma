@@ -122,7 +122,7 @@ export const LayoutSidebar = (props: LayoutSidebarProps) => {
   })
 
   return (
-    <div className="layout-content__left">
+    <div className="layout-content__left" data-theme={isDark ? 'dark' : 'light'}>
       {/* Logo */}
       <div className="the-logo" data-tauri-drag-region="false">
         <div className="luma-brand" data-tauri-drag-region="true">

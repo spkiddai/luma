@@ -1,12 +1,13 @@
 # Luma · 流光
 
-Luma 0.3 is a desktop proxy client **based directly on [Clash Verge Rev 2.5.8](https://github.com/clash-verge-rev/clash-verge-rev/tree/v2.5.8)** (commit `4337bd85758d54d7b9044b2da3c9ac1176eae1f3`). The original authors retain their copyright. Luma modifications and the upstream code are distributed under GPL-3.0-only.
+Luma 0.3.2 is a desktop proxy client **based directly on [Clash Verge Rev 2.5.8](https://github.com/clash-verge-rev/clash-verge-rev/tree/v2.5.8)** (commit `4337bd85758d54d7b9044b2da3c9ac1176eae1f3`). The original authors retain their copyright. Luma modifications and the upstream code are distributed under GPL-3.0-only.
 
 This version replaces the previous Electron implementation with the upstream Tauri/Rust app, React interface, configuration pipeline, core lifecycle and proxy group management. Traffic is forwarded directly by the bundled Mihomo process, not through JavaScript or the webview. Validation focuses on reliable startup, configuration changes, forwarding during reloads, and clean exit/restart. Passing these checks does not establish that every intermittent browsing failure has been eliminated.
 
 ## Desktop behavior
 
-- Native menu bar/tray, expandable proxy groups, subscriptions, connections, rules, logs and settings from upstream.
+- A distinct Luma interface with sky-blue light and charcoal dark themes, a traffic-first overview, expandable proxy groups, subscriptions and preferences.
+- Upstream core lifecycle and configuration management remain in place. Original copyright, license and source references are available in About Luma.
 - Core starts with the app. Stable Mihomo 1.19.32, geodata, licenses and core source are included; no first-start core download.
 - Desktop TUN and application-specific proxy controls are absent. The core runs without a privileged system service.
 - System proxy is off on first start and on migration. Enable it yourself or configure a browser to use the displayed HTTP/SOCKS port.

@@ -251,7 +251,7 @@ function ProxyVirtualList({
 }) {
   const theme = useTheme()
   const stickyBackground =
-    theme.palette.mode === 'dark' ? '#17231F' : 'var(--background-color)'
+    theme.palette.mode === 'dark' ? '#1F2125' : 'var(--background-color)'
 
   return (
     <div ref={parentRef} style={{ height, overflow: 'auto' }}>

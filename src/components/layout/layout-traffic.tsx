@@ -27,10 +27,10 @@ export const LayoutTraffic = () => {
         {rows.map(({ key, icon, value, suffix }) => {
           const [amount, unit] = parseTraffic(value)
           return (
-            <Box key={key} title={t(`home.components.traffic.metrics.${key}`)} sx={{ display: 'flex', alignItems: 'center', gap: 1, '& svg': { fontSize: 14, color: '#a7bdaa' } }}>
+            <Box key={key} title={t(`home.components.traffic.metrics.${key}`)} sx={{ display: 'flex', alignItems: 'center', gap: 1, '& svg': { fontSize: 14, color: 'var(--nav-muted)' } }}>
               {icon}
-              <Typography component="span" sx={{ fontSize: 12, fontVariantNumeric: 'tabular-nums', flex: 1, color: '#e0eddf' }}>{amount}</Typography>
-              <Typography component="span" sx={{ fontSize: 10, color: '#a7bdaa' }}>{unit}{suffix}</Typography>
+              <Typography component="span" sx={{ fontSize: 12, fontVariantNumeric: 'tabular-nums', flex: 1, color: 'var(--nav-strong)' }}>{amount}</Typography>
+              <Typography component="span" sx={{ fontSize: 10, color: 'var(--nav-muted)' }}>{unit}{suffix}</Typography>
             </Box>
           )
         })}

@@ -280,7 +280,7 @@ const UnlockPage = () => {
                   height: '100%',
                   borderRadius: 2,
                   borderLeft: `4px solid ${getStatusBorderColor(item.status)}`,
-                  backgroundColor: isDark ? '#202F28' : '#ffffff',
+                  backgroundColor: isDark ? '#2A2D32' : '#ffffff',
                   position: 'relative',
                   overflow: 'hidden',
                   '&:hover': {

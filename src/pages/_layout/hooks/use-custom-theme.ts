@@ -153,7 +153,7 @@ export const useCustomTheme = () => {
         },
         palette: {
           mode,
-          divider: mode === 'light' ? '#DFE7DE' : '#35483D',
+          divider: mode === 'light' ? '#D8E6EF' : '#3B3E45',
           primary: { main: setting.primary_color || dt.primary_color },
           secondary: { main: setting.secondary_color || dt.secondary_color },
           info: { main: setting.info_color || dt.info_color },
@@ -191,7 +191,7 @@ export const useCustomTheme = () => {
         },
         palette: {
           mode,
-          divider: mode === 'light' ? '#DFE7DE' : '#35483D',
+          divider: mode === 'light' ? '#D8E6EF' : '#3B3E45',
           primary: { main: dt.primary_color },
           secondary: { main: dt.secondary_color },
           info: { main: dt.info_color },
@@ -214,7 +214,7 @@ export const useCustomTheme = () => {
       const selectColor = mode === 'light' ? '#f5f5f5' : '#3E3E3E'
       const scrollColor = mode === 'light' ? '#90939980' : '#555555'
       const dividerColor =
-        mode === 'light' ? '#DFE7DE' : '#35483D'
+        mode === 'light' ? '#D8E6EF' : '#3B3E45'
       rootEle.style.setProperty('--divider-color', dividerColor)
       rootEle.style.setProperty('--background-color', backgroundColor)
       rootEle.style.setProperty('--selection-color', selectColor)
@@ -230,7 +230,7 @@ export const useCustomTheme = () => {
       )
       rootEle.style.setProperty(
         '--scrollbar-bg',
-        mode === 'light' ? '#f1f1f1' : '#17231F',
+        mode === 'light' ? '#f1f1f1' : '#1F2125',
       )
       rootEle.style.setProperty(
         '--scrollbar-thumb',
@@ -306,7 +306,7 @@ export const useCustomTheme = () => {
 
         /* 确保模态框和对话框也使用暗色主题 */
         .MuiDialog-paper {
-          background-color: ${mode === 'light' ? '#ffffff' : '#202F28'} !important;
+          background-color: ${mode === 'light' ? '#ffffff' : '#2A2D32'} !important;
         }
 
         :focus-visible {
@@ -314,7 +314,7 @@ export const useCustomTheme = () => {
           outline-offset: 2px;
         }
         .layout-content__left :focus-visible {
-          outline-color: #d8edc8;
+          outline-color: var(--primary-main);
         }
       `
 

@@ -15,7 +15,7 @@ it does not establish an external network speed improvement.
 ## Luma-specific changes
 
 - Product name, icons, bundle ID, deep link and update destination.
-- Luma navigation, green palette, overview hierarchy and user-facing terminology.
+- Luma navigation, sky-blue light and charcoal dark palettes, overview hierarchy and user-facing terminology.
   The About dialog identifies the fork and links to source and license notices.
 - Separate data, IPC, process and execution-lock names. The vendored IPC library
   preserves upstream execution guards under the Luma namespace. Privileged service
@@ -47,8 +47,10 @@ The desktop workflow is the authoritative build result for each commit. It runs:
 4. On macOS, the actual packaged application with a synthetic legacy profile:
    automatic core startup, host resolution, repeated node selection and runtime
    reload, original profile preservation, exactly one core, clean exit and restart.
-   System proxy must stay disabled. This test refuses to run outside GitHub Actions
-   and refuses existing data directories.
+   System proxy must stay disabled. Four launches also capture the English and
+   Chinese overview, dark proxy groups, and Chinese settings for visual review.
+   This test refuses to run outside GitHub Actions and refuses existing data
+   directories.
 
 Tests do not contain or upload a real subscription. Loopback throughput is diagnostic
 only. Live browser behavior, real network changes and hardware sleep/wake need separate

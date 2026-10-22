@@ -71,7 +71,7 @@ const SettingPage = () => {
               border: '1px solid',
               borderColor: 'divider',
               marginBottom: 1.5,
-              backgroundColor: isDark ? '#202F28' : '#ffffff',
+              backgroundColor: isDark ? '#2A2D32' : '#ffffff',
             }}
           >
             <SettingSystem onError={onError} />
@@ -81,7 +81,7 @@ const SettingPage = () => {
               borderRadius: '16px',
               border: '1px solid',
               borderColor: 'divider',
-              backgroundColor: isDark ? '#202F28' : '#ffffff',
+              backgroundColor: isDark ? '#2A2D32' : '#ffffff',
             }}
           >
             <SettingClash onError={onError} />
@@ -94,7 +94,7 @@ const SettingPage = () => {
               border: '1px solid',
               borderColor: 'divider',
               marginBottom: 1.5,
-              backgroundColor: isDark ? '#202F28' : '#ffffff',
+              backgroundColor: isDark ? '#2A2D32' : '#ffffff',
             }}
           >
             <SettingVergeBasic onError={onError} />
@@ -104,7 +104,7 @@ const SettingPage = () => {
               borderRadius: '16px',
               border: '1px solid',
               borderColor: 'divider',
-              backgroundColor: isDark ? '#202F28' : '#ffffff',
+              backgroundColor: isDark ? '#2A2D32' : '#ffffff',
             }}
           >
             <SettingVergeAdvanced onError={onError} />
