@@ -1,0 +1,1 @@
+Derived from clash-verge-rev/clash-verge-service-ipc v2.7.6, commit b2a7427d6681c8d3780ab83a73f4dc21da2f22d6. GPL-3.0. Luma changes IPC, execution-lease, process and bundle namespaces to avoid controlling another application. Original execution guards and termination handling are retained. Privileged service binaries are not built or shipped.

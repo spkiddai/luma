@@ -1,0 +1,18 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
+  "identifier": "io.github.spkiddai.luma",
+  "productName": "Luma",
+  "bundle": {
+    "targets": [
+      "app"
+    ],
+    "macOS": {
+      "frameworks": [],
+      "minimumSystemVersion": "11.0",
+      "exceptionDomain": "",
+      "signingIdentity": null,
+      "entitlements": "packages/macos/entitlements.plist",
+      "infoPlist": "packages/macos/info_merge.plist"
+    }
+  }
+}
