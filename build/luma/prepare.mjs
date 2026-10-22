@@ -27,7 +27,8 @@ const commit = '88dcbf7f1614a67c3b36b848ee3592dfa92ada36';
 await writeFile('src-tauri/resources/source/mihomo-v1.19.32.tar.gz', await buildDownload(`https://api.github.com/repos/MetaCubeX/mihomo/tarball/${commit}`));
 await copyFile(`resources/core/${os}-${process.arch}/version.json`, 'src-tauri/resources/core-version.json');
 await copyFile('resources/geodata/manifest.json', 'src-tauri/resources/geodata-manifest.json');
-run(process.platform === 'win32' ? 'pnpm.cmd' : 'pnpm', ['exec', 'tauri', 'icon', 'resources/icon.png', '--output', 'src-tauri/icons']);
+if (process.platform === 'win32') run('cmd.exe', ['/d', '/s', '/c', 'pnpm exec tauri icon resources/icon.png --output src-tauri/icons']);
+else run('pnpm', ['exec', 'tauri', 'icon', 'resources/icon.png', '--output', 'src-tauri/icons']);
 for (const name of ['tray-icon.ico','tray-icon-sys.ico','tray-icon-tun.ico','tray-icon-mono.ico','tray-icon-sys-mono-new.ico','tray-icon-tun-mono-new.ico']) {
   await copyFile('src-tauri/icons/icon.ico', path.join('src-tauri/icons', name));
 }

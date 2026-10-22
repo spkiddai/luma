@@ -7,12 +7,10 @@ import {
   PauseCircleOutlined,
 } from '@mui/icons-material'
 import { Typography, Stack, Divider, Chip, IconButton } from '@mui/material'
-import { useLockFn } from 'ahooks'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router'
 
-import { useServiceInstaller } from '@/hooks/use-service-installer'
 import { useSystemState } from '@/hooks/use-system-state'
 import {
   useUpdate,
@@ -21,7 +19,6 @@ import {
 } from '@/hooks/use-update'
 import { useVerge } from '@/hooks/use-verge'
 import { getSystemInfo } from '@/services/cmds'
-import { showNotice } from '@/services/notice-service'
 import { version as appVersion } from '@root/package.json'
 
 import { EnhancedCard } from './enhanced-card'
@@ -30,9 +27,8 @@ export const SystemInfoCard = () => {
   const { t } = useTranslation()
   const { verge, patchVerge } = useVerge()
   const navigate = useNavigate()
-  const { runningMode, isAdminMode, isSidecarMode, mutateSystemState } =
+  const { runningMode, isAdminMode, isSidecarMode } =
     useSystemState()
-  const { installServiceAndRestartCore } = useServiceInstaller()
 
   const { checkUpdate: triggerCheckUpdate, lastCheckUpdate } = useUpdate(true)
 
@@ -85,56 +81,12 @@ export const SystemInfoCard = () => {
     }
   }, [verge, patchVerge])
 
-  const handleRunningModeClick = useCallback(async () => {
-    if (isSidecarMode || (isAdminMode && isSidecarMode)) {
-      await installServiceAndRestartCore()
-      await mutateSystemState()
-    }
-  }, [
-    isSidecarMode,
-    isAdminMode,
-    installServiceAndRestartCore,
-    mutateSystemState,
-  ])
-
-  const onCheckUpdate = useLockFn(async () => {
-    try {
-      const result = await triggerCheckUpdate()
-      const info = result.data
-      if (!info?.available) {
-        showNotice.success(
-          'settings.components.verge.advanced.notifications.latestVersion',
-        )
-      } else {
-        showNotice.info('shared.feedback.notifications.updateAvailable', 2000)
-        goToSettings()
-      }
-    } catch (err) {
-      console.warn('update check failed:', err)
-      showNotice.warning(err)
-    }
-  })
-
   const autoLaunchEnabled = useMemo(
     () => verge?.enable_auto_launch || false,
     [verge],
   )
 
-  const runningModeStyle = useMemo(
-    () => ({
-      cursor:
-        isSidecarMode || (isAdminMode && isSidecarMode) ? 'pointer' : 'default',
-      textDecoration:
-        isSidecarMode || (isAdminMode && isSidecarMode) ? 'underline' : 'none',
-      display: 'flex',
-      alignItems: 'center',
-      gap: 0.5,
-      '&:hover': {
-        opacity: isSidecarMode || (isAdminMode && isSidecarMode) ? 0.7 : 1,
-      },
-    }),
-    [isSidecarMode, isAdminMode],
-  )
+  const runningModeStyle = { display: 'flex', alignItems: 'center', gap: 0.5 }
 
   const getModeIcon = () => {
     if (runningMode === 'NotRunning') {

@@ -33,7 +33,6 @@ const HOTKEY_FUNC_LABELS: Record<(typeof HOTKEY_FUNC)[number], string> = {
   clash_mode_global: 'settings.modals.hotkey.functions.global',
   clash_mode_direct: 'settings.modals.hotkey.functions.direct',
   toggle_system_proxy: 'settings.modals.hotkey.functions.toggleSystemProxy',
-  toggle_tun_mode: 'settings.modals.hotkey.functions.toggleTunMode',
   entry_lightweight_mode:
     'settings.modals.hotkey.functions.entryLightweightMode',
   reactivate_profiles: 'settings.modals.hotkey.functions.reactivateProfiles',
