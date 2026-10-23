@@ -32,16 +32,11 @@ it does not establish an external network speed improvement.
 
 ## Validation
 
-Luma 0.3.1 binaries were built from `d3aabed3f8e34561d6d2f42e11816d3c65db4ab7`.
-[The release workflow](https://github.com/spkiddai/luma/actions/runs/39735600564)
-passed for Apple Silicon, Intel Mac and Windows x64. Each ran 45 frontend tests;
-macOS ran 380 Rust tests and Windows ran 359. Both macOS bundles passed integrity
-verification and the packaged-app lifecycle regression described below.
-
-The 0.3.2 sky-blue and charcoal update is built from
-`4223e20fcb9605bce61afb217a4456bbed76952b`; its
-[workflow run](https://github.com/spkiddai/luma/actions/runs/39746729226) reports
-the current platform results.
+Luma 0.3.2 binaries were built from `4223e20fcb9605bce61afb217a4456bbed76952b`.
+[The release workflow](https://github.com/spkiddai/luma/actions/runs/39746729226)
+passed for Apple Silicon, Intel Mac and Windows x64, including frontend checks,
+Rust tests and core forwarding regressions. Both macOS bundles also passed
+integrity verification and the packaged-app lifecycle regression described below.
 
 The desktop workflow is the authoritative build result for each commit. It runs:
 

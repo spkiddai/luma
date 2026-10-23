@@ -13,7 +13,7 @@ window.addEventListener('hashchange', revealAnchor);
 revealAnchor();
 
 // The links work without JavaScript. File metadata is generated from the actual release files.
-fetch('downloads/0.3.0/manifest.json')
+fetch('downloads/0.3.2/manifest.json')
   .then(response => response.ok ? response.json() : null)
   .then(manifest => {
     if (!Array.isArray(manifest?.files)) return;
